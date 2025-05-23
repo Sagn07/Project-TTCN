@@ -379,20 +379,23 @@ body {
 }
 
 .footer-top .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  display: flex;
+}
+
+.container-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .footer-logo {
-  display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  flex: 0 0 40%;
 }
 
 .footer-logo img {
   margin-bottom: 10px;
-  height: 40px;
+  height: 100px;
 }
 
 .footer-slogan {
@@ -400,18 +403,24 @@ body {
   line-height: 1.2;
 }
 
-.company-info h3 {
+.footer-logo h3 {
   font-size: 1.2rem;
+  /* margin-bottom: 20px; */
+}
+.footer-logo h2 {
+  font-size: 0.8rem;
   margin-bottom: 20px;
+  font-weight: 400;
 }
 
 .address-block {
+  display: flex;
   margin-bottom: 15px;
+  gap: 10px;
 }
 
 .address-label {
   color: var(--primary-color);
-  margin-bottom: 5px;
   font-weight: 500;
 }
 
@@ -423,6 +432,12 @@ body {
   display: block;
   margin-bottom: 10px;
   transition: var(--transition);
+}
+
+.mail-box, .phone-call {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .contact-info a:hover {
