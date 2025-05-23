@@ -388,12 +388,12 @@ body {
   justify-content: space-between;
 }
 
-.footer-logo {
+.footer-left {
   flex-direction: column;
   flex: 0 0 40%;
 }
 
-.footer-logo img {
+.footer-left img {
   margin-bottom: 10px;
   height: 100px;
 }
@@ -403,14 +403,31 @@ body {
   line-height: 1.2;
 }
 
-.footer-logo h3 {
+.footer-left h3 {
   font-size: 1.2rem;
   /* margin-bottom: 20px; */
 }
-.footer-logo h2 {
+.footer-left h2 {
   font-size: 0.8rem;
   margin-bottom: 20px;
   font-weight: 400;
+}
+
+.footer-right .contact-info p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-right .contact-info .icon {
+    margin-right: 10px;
+    font-size: 1.1em;
+    min-width: 20px; /* Đảm bảo icon không bị dịch chuyển */
+}
+
+.icon img {
+  height: 25px;
 }
 
 .address-block {
