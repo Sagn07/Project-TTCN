@@ -1,11 +1,7 @@
-/*
- * Main CSS for myLocal.vn clone
- */
-
 /* Font imports */
 @font-face {
-  font-family: 'LocalFont';
-  src: url('/src/assets/fonts/local-font.otf') format('opentype');
+  font-family: 'Montserrat';
+  src: url('src/assets/fonts/Montserrat-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -28,6 +24,7 @@
 body {
   background-color: var(--bg-light);
   overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Header Styles */
@@ -129,152 +126,54 @@ body {
   margin: 0 5px;
 }
 
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  margin: 30px 0;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: var(--transition);
-}
-
-.btn-primary {
-  background-color: #fff;
-  color: var(--primary-color);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--box-shadow);
-}
-
-.arrow-icon {
-  margin-left: 10px;
-  width: 16px;
-  height: 16px;
-}
-
-.quick-actions {
+.banner-container {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-top: 20px;
-  position: relative;
-  z-index: 10;
 }
 
-.quick-action-box {
-  background-color: #206bbc;
-  color: var(--text-light);
-  padding: 15px;
+.left-section, .right-section {
+  position: relative;
+  width: 605px; /* Điều chỉnh kích thước theo nhu cầu */
+  height: 283px; /* Điều chỉnh kích thước theo nhu cầu */
+}
+
+.background-image {
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 180px;
-  box-shadow: var(--box-shadow);
-  transition: var(--transition);
-}
-
-.quick-action-box:hover {
-  transform: translateY(-5px);
-}
-
-.package-icon {
-  width: 40px;
-  height: 40px;
-}
-
-.quick-action-text {
-  line-height: 1.2;
-}
-
-/* Promo Banner Section */
-.promo-banner {
-  padding: 50px 0;
-  text-align: center;
-}
-
-.promo-title {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: var(--primary-color);
-  position: relative;
-  display: inline-block;
-}
-
-.promo-title:after {
-  content: "";
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo hình ảnh lấp đầy khung */
   position: absolute;
-  bottom: -10px;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Đặt hình nền phía sau */
+}
+
+.button {
+  position: absolute;
+  bottom: 20px; /* Khoảng cách từ dưới lên */
   left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background-color: var(--primary-color);
+  transform: translateX(30%); /* Di chuyển nút */
+  background-color: #e63946;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  z-index: 2; /* Đặt nút lên trên hình ảnh */
+  font-size: 16px;
 }
-
-.news-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 20px;
-}
-
-/* News Card Styles */
-.news-card {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: var(--box-shadow);
-  transition: var(--transition);
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  min-height: 150px;
-}
-
-.news-card:hover {
-  transform: translateY(-5px);
-}
-
-.news-meta {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-}
-
-.news-category {
-  color: var(--primary-color);
-}
-
-.news-title {
-  font-size: 1.1rem;
-  line-height: 1.4;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-
-.news-link {
-  margin-top: auto;
-  align-self: flex-end;
-}
-
-.news-link .arrow-icon {
-  width: 18px;
-  height: 18px;
-  transition: var(--transition);
-}
-
-.news-card:hover .news-link .arrow-icon {
-  transform: translateX(5px);
+.button2 {
+  position: absolute;
+  bottom: 20px; /* Khoảng cách từ dưới lên */
+  left: 50%;
+  transform: translateX(40%); /* Di chuyển nút */
+  background-color: #e63946;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  z-index: 2; /* Đặt nút lên trên hình ảnh */
+  font-size: 16px;
 }
 
 /* Features Section */
@@ -295,18 +194,6 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.8;
-}
-
-.features-section::before {
-  left: 50px;
-  top: 100px;
-  background-image: url('https://ext.same-assets.com/3637946010/2041544585.svg');
-}
-
-.features-section::after {
-  right: 50px;
-  bottom: 100px;
-  background-image: url('https://ext.same-assets.com/3637946010/3210335374.svg');
 }
 
 .section-title {
@@ -367,6 +254,67 @@ body {
   font-size: 0.95rem;
 }
 
+/* FAQ Section */
+.faq-section {
+    padding: 40px 0;
+}
+
+.faq-section h1 {
+    font-size: 36px;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq-header h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.faq-header p {
+    font-size: 16px;
+    color: #666;
+}
+
+.faq-item {
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #b7273a;
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #fff;
+    border-radius: 0 0 8px 8px;
+}
+
 /* Footer Styles */
 .site-footer {
   background-color: var(--bg-dark);
@@ -379,40 +327,50 @@ body {
 }
 
 .footer-top .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-
-.footer-logo {
   display: flex;
+}
+
+.container-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-left {
   flex-direction: column;
-  align-items: flex-start;
+  flex: 0 0 40%;
 }
 
-.footer-logo img {
+.footer-left img {
   margin-bottom: 10px;
-  height: 40px;
+  height: 100px;
 }
 
-.footer-slogan {
-  font-weight: bold;
-  line-height: 1.2;
-}
-
-.company-info h3 {
+.footer-left h3 {
   font-size: 1.2rem;
+  /* margin-bottom: 20px; */
+}
+.footer-left h2 {
+  font-size: 0.8rem;
   margin-bottom: 20px;
+  font-weight: 400;
 }
 
-.address-block {
-  margin-bottom: 15px;
+.footer-right .contact-info p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: flex-start;
 }
 
-.address-label {
-  color: var(--primary-color);
-  margin-bottom: 5px;
-  font-weight: 500;
+.footer-right .contact-info .icon {
+    margin-right: 10px;
+    font-size: 1.1em;
+    min-width: 20px; /* Đảm bảo icon không bị dịch chuyển */
+}
+
+.icon img {
+  height: 25px;
 }
 
 .contact-info {
@@ -425,57 +383,14 @@ body {
   transition: var(--transition);
 }
 
+.mail-box, .phone-call {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .contact-info a:hover {
   color: var(--primary-color);
-}
-
-.footer-navigation {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.footer-nav-column h4 {
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-
-.footer-nav-column ul li {
-  margin-bottom: 10px;
-}
-
-.footer-nav-column a {
-  transition: var(--transition);
-}
-
-.footer-nav-column a:hover {
-  color: var(--primary-color);
-}
-
-.footer-middle {
-  padding: 30px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-middle .container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.responsible-info h3 {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-}
-
-.legal-info {
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-.legal-info p {
-  margin-bottom: 10px;
 }
 
 .footer-bottom {
@@ -491,20 +406,4 @@ body {
 .copyright {
   font-size: 0.9rem;
   opacity: 0.8;
-}
-
-.social-links {
-  display: flex;
-  gap: 15px;
-}
-
-.social-icon {
-  width: 24px;
-  height: 24px;
-  opacity: 0.8;
-  transition: var(--transition);
-}
-
-.social-icon:hover {
-  opacity: 1;
 }
