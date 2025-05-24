@@ -154,7 +154,44 @@ body {
   box-shadow: var(--box-shadow);
 }
 
-.arrow-icon {
+.banner-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.left-section, .right-section {
+  position: relative;
+  width: 605px; /* Điều chỉnh kích thước theo nhu cầu */
+  height: 283px; /* Điều chỉnh kích thước theo nhu cầu */
+}
+
+.background-image {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo hình ảnh lấp đầy khung */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Đặt hình nền phía sau */
+}
+
+.button {
+  position: absolute;
+  bottom: 20px; /* Khoảng cách từ dưới lên */
+  left: 50%;
+  transform: translateX(30%); /* Di chuyển nút */
+  background-color: #e63946;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  z-index: 2; /* Đặt nút lên trên hình ảnh */
+  font-size: 16px;
+}
+
+/* .arrow-icon {
   margin-left: 10px;
   width: 16px;
   height: 16px;
@@ -184,7 +221,7 @@ body {
 
 .quick-action-box:hover {
   transform: translateY(-5px);
-}
+} */
 
 .package-icon {
   width: 40px;
