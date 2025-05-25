@@ -56,46 +56,97 @@
                 <div class="card">
                     <h2>Khuyến Mãi Nạp Thẻ</h2>
                     <p>Khám phá các chương trình nạp thẻ hấp dẫn từ Viettel, Mobifone, Vinaphone với ưu đãi siêu khủng.</p>
-                    <a href="#">Xem chi tiết</a>
+                    <button onclick="openModal('modal1')">Xem chi tiết</button>
                 </div>
 
                 <!-- Category 2: Ưu đãi gói cước -->
                 <div class="card">
                     <h2>Ưu Đãi Gói Cước</h2>
                     <p>Đăng ký ngay các gói cước data, gọi thoại và SMS với giá ưu đãi, phù hợp mọi nhu cầu.</p>
-                    <a href="#">Xem chi tiết</a>
+                    <button onclick="openModal('modal2')">Xem chi tiết</button>
                 </div>
 
                 <!-- Category 3: Tin tức nhà mạng -->
                 <div class="card">
                     <h2>Tin Tức Nhà Mạng</h2>
                     <p>Cập nhật thông tin mới nhất về dịch vụ, chính sách và công nghệ từ các nhà mạng hàng đầu.</p>
-                    <a href="#">Xem chi tiết</a>
+                    <button onclick="openModal('modal3')">Xem chi tiết</button>
                 </div>
 
                 <!-- Category 4: Sim số đẹp -->
                 <div class="card">
                     <h2>Sim Số Đẹp</h2>
                     <p>Sở hữu sim số đẹp phong thủy, dễ nhớ với các chương trình ưu đãi đặc biệt.</p>
-                    <a href="#">Xem chi tiết</a>
+                    <button onclick="openModal('modal4')">Xem chi tiết</button>
                 </div>
 
                 <!-- Category 5: Hướng dẫn sử dụng -->
                 <div class="card">
                     <h2>Hướng Dẫn Sử Dụng</h2>
                     <p>Hướng dẫn chi tiết cách đăng ký, nạp tiền và sử dụng các dịch vụ sim thẻ hiệu quả.</p>
-                    <a href="#">Xem chi tiết</a>
+                    <button onclick="openModal('modal5')">Xem chi tiết</button>
                 </div>
 
                 <!-- Category 6: Tin tức công nghệ -->
                 <div class="card">
                     <h2>Tin Tức Công Nghệ</h2>
                     <p>Tìm hiểu xu hướng công nghệ viễn thông, 5G và các dịch vụ tiên tiến nhất.</p>
-                    <a href="#">Xem chi tiết</a>
+                    <button onclick="openModal('modal6')">Xem chi tiết</button>
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- Modals -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h2>Khuyến Mãi Nạp Thẻ</h2>
+            <p>Nhận ngay ưu đãi 50% giá trị thẻ nạp khi nạp từ 100.000 VNĐ trở lên trong tuần này! Áp dụng cho Viettel, Mobifone, Vinaphone. Thời gian khuyến mãi: 25/05/2025 - 31/05/2025.</p>
+            <button onclick="closeModal('modal1')">Đóng</button>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <h2>Ưu Đãi Gói Cước</h2>
+            <p>Đăng ký gói cước 4G/5G với 2GB/ngày chỉ từ 120.000 VNĐ/tháng. Miễn phí gọi nội mạng dưới 10 phút. Liên hệ nhà mạng để biết thêm chi tiết.</p>
+            <button onclick="closeModal('modal2')">Đóng</button>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <h2>Tin Tức Nhà Mạng</h2>
+            <p>Viettel triển khai mạng 5G toàn quốc, tốc độ lên đến 1Gbps. Mobifone ra mắt dịch vụ thanh toán trực tuyến mới. Vinaphone cải tiến chính sách chăm sóc khách hàng.</p>
+            <button onclick="closeModal('modal3')">Đóng</button>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <h2>Sim Số Đẹp</h2>
+            <p>Chọn sim phong thủy hợp mệnh với giá chỉ từ 500.000 VNĐ. Ưu đãi giảm 20% khi mua sim trong tháng này. Liên hệ ngay để được tư vấn!</p>
+            <button onclick="closeModal('modal4')">Đóng</button>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <h2>Hướng Dẫn Sử Dụng</h2>
+            <p>Bước 1: Soạn tin *101# để kiểm tra tài khoản.</p>
+            <p>Bước 2: Nạp tiền qua ứng dụng nhà mạng.</p>
+            <p>Bước 3: Đăng ký gói cước bằng cách soạn tin theo cú pháp của nhà mạng.</p>
+            <button onclick="closeModal('modal5')">Đóng</button>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <h2>Tin Tức Công Nghệ</h2>
+            <p>Công nghệ 5G đang thay đổi cách chúng ta kết nối. Tìm hiểu về các thiết bị hỗ trợ 5G mới nhất và các dịch vụ viễn thông tiên tiến.</p>
+            <button onclick="closeModal('modal6')">Đóng</button>
+        </div>
+    </div>
 
     <!-- Footer Section -->
     <footer class="site-footer">
@@ -126,22 +177,22 @@
     </footer>
   </div>
   <script type="module" src="src/main.ts"></script>
-    <script>
-        // JavaScript for accordion functionality
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-                const isOpen = answer.style.display === 'block';
-                document.querySelectorAll('.faq-answer').forEach(item => item.style.display = 'none');
-                answer.style.display = isOpen ? 'none' : 'block';
-            });
-        });
+  <script>
+      function openModal(modalId) {
+          document.getElementById(modalId).style.display = 'flex';
+      }
 
-        // JavaScript for mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', () => {
-            document.querySelector('.nav ul').classList.toggle('show');
-        });
-    </script>
+      function closeModal(modalId) {
+          document.getElementById(modalId).style.display = 'none';
+      }
+
+      // Close modal when clicking outside
+      window.onclick = function(event) {
+          if (event.target.classList.contains('modal')) {
+              event.target.style.display = 'none';
+          }
+      }
+  </script>
 </body>
 
 </html>
