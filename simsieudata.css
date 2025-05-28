@@ -14,7 +14,7 @@ body {
 
 /* Phần tiêu đề */
 .hero {
-  background-image: url(/Project-TTCN/simsieudataimage/IMG_20250524_160210.png); /* Thay bằng đường dẫn ảnh nền */
+  background-image: url(/src/assets/IMG_20250524_160210.png); /* Thay bằng đường dẫn ảnh nền */
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -234,6 +234,11 @@ body {
   background: #fff;
   cursor: pointer;
   border-radius: 5px;
+  align-items: center;
+  display: inline-flex;
+  border-width: 2px;
+  justify-content: center;
+  cursor: pointer;
 }
 
 /* Actions */
