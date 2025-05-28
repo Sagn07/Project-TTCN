@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Siêu nhà mạng data, Khám phá không giới hạn, Giá không thể hợp lý hơn !!!" />
+  <title>HITC Travel</title>
+  <link rel="stylesheet" href="src/css/reset.css">
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="stylesheet" href="src/css/responsive.css">
+</head>
+
+<body>
+  <div id="root">
+    <!-- Header Section -->
+    <header class="site-header">
+      <div class="container">
+        <div class="header-content">
+          <div class="mobile-menu-toggle">
+            <img src="" alt="Menu" id="mobile-menu-icon">
+          </div>
+          <div class="logo">
+            <a href="index.html">
+              <img src="src/assets/logochu-trang-08.png" alt="HITC Travel" id="logo-image">
+            </a>
+          </div>
+          <nav class="main-navigation">
+            <ul class="nav-links">
+              <li><a href="/sim-sieu-data">SIM Siêu Data</a></li>
+              <li><a href="/sim-so-dep">SIM Số Đẹp</a></li>
+              <li><a href="tintuc.html">Tin tức & Ưu đãi</a></li>
+              <li><a href="hotro.html">Hỗ trợ</a></li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <a href="giohang.html" class="cart-icon">
+              <img src="src/assets/shopping-cart.svg" alt="Giỏ hàng" id="cart-icon">
+            </a>
+            <a href="/tracking-order" class="order-tracking">
+              <img src="src/assets/receipt.svg" alt="Đơn mua" id="order-icon">
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Cart Section -->
+    <div class="container-cart">
+        <h2>Giỏ hàng</h2>
+        <div class="cart-empty" id="cartEmpty">
+            <img src="src/assets/empty-cart.svg" alt="Giỏ hàng trống">
+            <p>Giỏ hàng SIM DATA của bạn đang trống<br>Khám phá thêm để lựa chọn sản phẩm phù hợp</p>
+            <button class="explore-btn" onclick="exploreNow()">Khám phá ngay</button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+            <div class="cart-content">
+                <div class="cart-list">
+                    <div id="itemsList"></div>
+                </div>
+                <div class="cart-summary">
+                    <h3>TẠM TÍNH</h3>
+                    <p class="total-price" id="totalPrice">0đ</p>
+                    <button class="checkout-btn" onclick="checkout()">Tiến hành mua hàng</button>
+                    <button class="add-more-btn" onclick="addMore()">Mua gói khác</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="confirmation-modal">
+        <div class="modal-content">
+            <p>Bạn có chắc chắn muốn xóa sản phẩm không?</p>
+            <button class="modal-btn confirm-btn" onclick="confirmDeleteAction()">Xác nhận</button>
+            <button class="modal-btn cancel-btn" onclick="cancelDelete()">Hủy</button>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="container">
+            <div class="footer-left">
+              <img src="src/assets/logokochu-trang-05.png" alt="Local" id="footer-left-image">
+              <h3 class="company-name">HITC TRAVEL</h3>
+              <h2 class="company-name">CÔNG TY CỔ PHẦN DU LỊCH & TIN HỌC CÔNG NGHỆ CAO HITC</h2>
+            </div>
+          <div class="footer-right">
+            <h3>Liên hệ với chúng tôi</h3>
+            <div class="contact-info">
+                <p><span class="icon"><img src="src/assets/gps.png" alt="Location"></span>Số 6, ngõ 274/3, phố Ngọc Lâm, Phường Ngọc Lâm, Quận Long Biên, Thành phố Hà Nội</p>
+                <p><span class="icon"><img src="src/assets/phone-call.png" alt="Location"></span>0909 023 386</p>
+                <p><span class="icon"><img src="src/assets/gmail.png" alt="Location"></span>cskh.hitc@gmail.com</p>
+                <p><span class="icon"><img src="src/assets/3d-alarm.png" alt="Location"></span>Giờ làm việc: Thứ 2 - Thứ 7: 8:00 - 17:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="copyright">© 2025 HITC Travel. All rights reserved</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="src/main.ts"></script>
+     <script>
+        let cartItems = [
+            { id: 1, name: "Gói A89D • 4GB/ngày", price: 89000, quantity: 1, cycle: "1 chu kỳ", selected: true }
+        ];
+        let itemToDelete = null;
+
+        function calculateTotal() {
+            return cartItems
+                .filter(item => item.selected)
+                .reduce((total, item) => total + item.price * item.quantity, 0);
+        }
+
+        function renderCart() {
+            const cartEmpty = document.getElementById('cartEmpty');
+            const cartItemsDiv = document.getElementById('cartItems');
+            const itemsList = document.getElementById('itemsList');
+            const totalPrice = document.getElementById('totalPrice');
+
+            if (cartItems.length === 0) {
+                cartEmpty.style.display = 'block';
+                cartItemsDiv.style.display = 'none';
+            } else {
+                cartEmpty.style.display = 'none';
+                cartItemsDiv.style.display = 'block';
+
+                itemsList.innerHTML = '';
+                cartItems.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.classList.add('cart-item');
+                    itemDiv.innerHTML = `
+                        <input type="checkbox" class="custom-checkbox" ${item.selected ? 'checked' : ''} onchange="toggleSelect(${item.id})">
+                        <div class="cart-item-details">
+                            <p>${item.name}</p>
+                            <p>Chu kỳ: ${item.cycle}</p>
+                            <p>Số lượng: 
+                                <span class="quantity-control">
+                                    <button onclick="decreaseQuantity(${item.id})">-</button>
+                                    <span>${item.quantity}</span>
+                                    <button onclick="increaseQuantity(${item.id})">+</button>
+                                </span>
+                            </p>
+                            <p style="color: #e60000;">${(item.price * item.quantity).toLocaleString()}đ</p>
+                        </div>
+                        <button class="delete-btn" onclick="showDeleteConfirmation(${item.id})">
+                            <span><img src="src/assets/icon-delete-black.svg" alt="Xóa sản phẩm"></span>
+                        </button>
+                    `;
+                    itemsList.appendChild(itemDiv);
+                });
+
+                totalPrice.textContent = `${calculateTotal().toLocaleString()}đ`;
+            }
+        }
+
+        function toggleSelect(id) {
+            const item = cartItems.find(item => item.id === id);
+            if (item) {
+                item.selected = !item.selected;
+                renderCart();
+            }
+        }
+
+        function increaseQuantity(id) {
+            const item = cartItems.find(item => item.id === id);
+            if (item) {
+                item.quantity++;
+                renderCart();
+            }
+        }
+
+        function decreaseQuantity(id) {
+            const item = cartItems.find(item => item.id === id);
+            if (item) {
+                if (item.quantity === 1) {
+                    showDeleteConfirmation(id);
+                } else {
+                    item.quantity--;
+                    renderCart();
+                }
+            }
+        }
+
+        function showDeleteConfirmation(id) {
+            itemToDelete = id;
+            const modal = document.getElementById('confirmationModal');
+            modal.style.display = 'flex';
+        }
+
+        function confirmDeleteAction() {
+            if (itemToDelete !== null) {
+                deleteItem(itemToDelete);
+                itemToDelete = null;
+            }
+            hideModal();
+        }
+
+        function cancelDelete() {
+            itemToDelete = null;
+            hideModal();
+        }
+
+        function deleteItem(id) {
+            cartItems = cartItems.filter(item => item.id !== id);
+            renderCart();
+        }
+
+        function hideModal() {
+            const modal = document.getElementById('confirmationModal');
+            modal.style.display = 'none';
+        }
+
+        function exploreNow() {
+            window.location.href = '/products';
+        }
+
+        function checkout() {
+            alert('Tiến hành mua hàng!');
+        }
+
+        function addMore() {
+            window.location.href = '/products';
+        }
+
+        renderCart();
+    </script>
+</body>
+
+</html>
