@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,8 +8,156 @@
   <link rel="stylesheet" href="src/css/reset.css">
   <link rel="stylesheet" href="src/css/main.css">
   <link rel="stylesheet" href="src/css/responsive.css">
+  <style>
+    /* Custom styles for sim số đẹp */
+    .sim-hero {
+      background: linear-gradient(135deg, #1a365f 0%, #2a5298 100%);
+      color: white;
+    }
+    .sim-filter {
+      background: #f8f9fa;
+      padding: 40px 0;
+      margin: 50px 0;
+    }
+    .filter-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .filter-group {
+      position: relative;
+    }
+    .filter-select {
+      width: 100%;
+      padding: 12px 20px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      appearance: none;
+      background: white url("src/assets/chevron-down.svg") no-repeat right 15px center;
+    }
+    .sim-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 40px 0;
+    }
+    .sim-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+    .sim-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    .sim-number {
+      font-size: 1.8rem;
+      color: #1e40af;
+      font-weight: 700;
+      text-align: center;
+      margin: 15px 0;
+    }
+    .sim-price {
+      color: #dc2626;
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    .sim-badges {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      display: flex;
+      gap: 8px;
+    }
+    .sim-badge {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .badge-network {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+    .badge-type {
+      background: #ffedd5;
+      color: #c2410c;
+    }
+    .sim-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .phongthuy-section {
+      background: #fff7ed;
+      padding: 60px 0;
+      margin: 50px 0;
+    }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 30px 0;
+    }
+    .page-item {
+      padding: 8px 14px;
+      background: #f1f5f9;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #1e293b;
+    }
+    .page-item.active {
+      background: #1d4ed8;
+      color: white;
+    }
+    .btn-primary, .btn-secondary {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background-color: #2563eb;
+      color: white;
+    }
+    .btn-secondary {
+      background-color: #f1f5f9;
+      color: #1e293b;
+    }
+    .phongthuy-content {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .phongthuy-image img {
+      max-width: 300px;
+      border-radius: 12px;
+    }
+    .phongthuy-list {
+      list-style: none;
+      padding: 0;
+    }
+    .phongthuy-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0;
+    }
+    .phongthuy-list img {
+      width: 20px;
+      height: 20px;
+    }
+  </style>
 </head>
-
 <body>
   <div id="root">
     <!-- Header Section -->
@@ -18,7 +165,7 @@
       <div class="container">
         <div class="header-content">
           <div class="mobile-menu-toggle">
-            <img src="" alt="Menu" id="mobile-menu-icon">
+            <img src="src/assets/menu.svg" alt="Menu" id="mobile-menu-icon">
           </div>
           <div class="logo">
             <a href="index.html">
@@ -44,121 +191,6 @@
         </div>
       </div>
     </header>
-  <style>
-    /* Custom styles for sim số đẹp */
-    .sim-hero {
-      background: linear-gradient(135deg, #1a365f 0%, #2a5298 100%);
-      color: white;
-    }
-
-    .sim-filter {
-      background: #f8f9fa;
-      padding: 40px 0;
-      margin: 50px 0;
-    }
-
-    .filter-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .filter-group {
-      position: relative;
-    }
-
-    .filter-select {
-      width: 100%;
-      padding: 12px 20px;
-      border: 2px solid #e2e8f0;
-      border-radius: 8px;
-      appearance: none;
-      background: white url("src/assets/chevron-down.svg") no-repeat right 15px center;
-    }
-
-    .sim-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      padding: 40px 0;
-    }
-
-    .sim-card {
-      background: white;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
-      position: relative;
-    }
-
-    .sim-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .sim-number {
-      font-size: 1.8rem;
-      color: #1e40af;
-      font-weight: 700;
-      text-align: center;
-      margin: 15px 0;
-    }
-
-    .sim-price {
-      color: #dc2626;
-      font-size: 1.4rem;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    .sim-badges {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      display: flex;
-      gap: 8px;
-    }
-
-    .sim-badge {
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    .badge-network {
-      background: #dbeafe;
-      color: #1e40af;
-    }
-
-    .badge-type {
-      background: #ffedd5;
-      color: #c2410c;
-    }
-
-    .sim-actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .phongthuy-section {
-      background: #fff7ed;
-      padding: 60px 0;
-      margin: 50px 0;
-    }
-  </style>
-</head>
-
-<body>
-  <div id="root">
-    <!-- Header Section -->
-    <header class="site-header">
-      <!-- Giữ nguyên như trang chủ -->
-    </header>
 
     <!-- Hero Banner -->
     <section class="hero-banner sim-hero">
@@ -172,10 +204,8 @@
             <span>SIM ÔNG ĐỊA</span>
             <img src="src/assets/Rectangle.png" alt="SIM" class="separator-img">
             <span>SIM THẦN TÀI</span>
-            <!-- Lặp lại cho hiệu ứng -->
           </div>
         </div>
-
         <div class="banner-container">
           <img src="src/assets/banner-simdep.jpg" alt="Sim Số Đẹp" class="full-banner">
           <div class="banner-overlay">
@@ -199,7 +229,6 @@
               <option value="than-tai">Thần Tài</option>
             </select>
           </div>
-
           <div class="filter-group">
             <select class="filter-select" id="price-range">
               <option value="">Mức giá</option>
@@ -209,7 +238,6 @@
               <option value="10-50">10 - 50 triệu</option>
             </select>
           </div>
-
           <div class="filter-group">
             <select class="filter-select" id="network">
               <option value="">Nhà mạng</option>
@@ -218,7 +246,6 @@
               <option value="vinaphone">Vinaphone</option>
             </select>
           </div>
-
           <button class="filter-btn">Tìm sim</button>
         </div>
       </div>
@@ -227,7 +254,6 @@
     <!-- Danh sách Sim -->
     <section class="container">
       <div class="sim-grid">
-        <!-- Sim 1 -->
         <div class="sim-card">
           <div class="sim-badges">
             <span class="sim-badge badge-network">Viettel</span>
@@ -240,7 +266,6 @@
             <button class="btn-secondary">Chi tiết</button>
           </div>
         </div>
-
         <!-- Thêm các sim khác -->
       </div>
 
@@ -283,7 +308,7 @@
       </div>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer class="site-footer">
       <!-- Giữ nguyên như trang chủ -->
     </footer>
@@ -292,24 +317,11 @@
   <script>
     // Xử lý filter
     document.querySelector('.filter-btn').addEventListener('click', () => {
-      const type = document.getElementById('sim-type').value
-      const price = document.getElementById('price-range').value
-      const network = document.getElementById('network').value
-      
-      // Logic filter
-      console.log(`Filtering by: ${type}, ${price}, ${network}`)
-    })
-
-    // Xử lý hover sim card
-    document.querySelectorAll('.sim-card').forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-5px)'
-      })
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'none'
-      })
-    })
+      const type = document.getElementById('sim-type').value;
+      const price = document.getElementById('price-range').value;
+      const network = document.getElementById('network').value;
+      console.log(`Filtering by: ${type}, ${price}, ${network}`);
+    });
   </script>
-  <script type="module" src="src/main.css"></script>
 </body>
 </html>

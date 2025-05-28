@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sim Siêu Data tốc độ cao, giá cực rẻ, sử dụng không giới hạn" />
+  <title>Sim Siêu Data - HITC Travel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Biến màu sắc */
+    :root {
+      --primary: #1e40af;       /* Màu xanh dương chính */
+      --secondary: #ea580c;     /* Màu cam nhấn */
+      --accent: #3b82f6;        /* Màu xanh dương nhạt */
+      --dark: #1e293b;          /* Màu nền tối */
+      --light: #f8fafc;         /* Màu nền sáng */
+      --text: #334155;          /* Màu chữ chính */
+      --light-text: #64748b;    /* Màu chữ nhạt */
+    }
+    
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* Header */
+    .site-header {
+      background: linear-gradient(135deg, var(--primary), #0d2b6c);
+      color: white;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    
+    .logo i {
+      color: var(--secondary);
+    }
+    
+    .logo a {
+      color: white;
+      text-decoration: none;
+    }
+    
+    .main-navigation ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+    
+    .main-navigation a {
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .main-navigation a:hover, 
+    .main-navigation a.active {
+      color: white;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    
+    .header-actions {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .cart-icon, .order-tracking {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .cart-icon:hover, .order-tracking:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    
+    .cta-button {
+      background-color: var(--secondary);
+      color: white;
+      padding: 10px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .cta-button:hover {
+      background-color: #c2410c;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+    }
+    
+    /* Hero Banner */
+    .hero-banner {
+      background: linear-gradient(135deg, #1a365f 0%, #2a5298 100%);
+      color: white;
+      padding: 40px 0;
+    }
+    
+    .marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      margin-bottom: 20px;
+    }
+    
+    .marquee-content {
+      display: inline-block;
+      animation: marquee 20s linear infinite;
+    }
+    
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    
+    .marquee-content span {
+      margin: 0 20px;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+    
+    .separator-img {
+      height: 20px;
+      margin: 0 10px;
+      vertical-align: middle;
+    }
+    
+    .banner-container {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 400px;
+    }
+    
+    .full-banner {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .banner-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.4);
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .banner-overlay h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    .banner-overlay p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+    
+    /* Features Section */
+    .features {
+      padding: 80px 0;
+      background-color: white;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--dark);
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--secondary);
+      border-radius: 2px;
+    }
+    
+    .section-title p {
+      color: var(--light-text);
+      max-width: 700px;
+      margin: 20px auto 0;
+      font-size: 1.1rem;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    
+    .feature-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      padding: 40px 25px;
+      border: 1px solid #e2e8f0;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      color: var(--accent);
+      font-size: 2rem;
+    }
+    
+    .feature-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--dark);
+    }
+    
+    .feature-card p {
+      color: var(--light-text);
+    }
+    
+    /* Pricing Section */
+    .pricing {
+      padding: 80px 0;
+      background-color: #f1f5f9;
+    }
+    
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .pricing-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      position: relative;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+    }
+    
+    .pricing-card.popular {
+      transform: scale(1.05);
+      border: 2px solid var(--secondary);
+      z-index: 1;
+    }
+    
+    .popular-tag {
+      position: absolute;
+      top: 20px;
+      right: -30px;
+      background: var(--secondary);
+      color: white;
+      padding: 5px 30px;
+      transform: rotate(45deg);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    
+    .pricing-header {
+      background: var(--primary);
+      color: white;
+      padding: 30px 20px;
+    }
+    
+    .pricing-card.popular .pricing-header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+    
+    .pricing-name {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .pricing-price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    
+    .pricing-period {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+    
+    .pricing-features {
+      padding: 30px;
+    }
+    
+    .pricing-features ul {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+    
+    .pricing-features li {
+      padding: 12px 0;
+      border-bottom: 1px solid #f1f5f9;
+      color: var(--light-text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .pricing-features li:last-child {
+      border-bottom: none;
+    }
+    
+    .pricing-features li i.fa-check {
+      color: var(--secondary);
+    }
+    
+    .pricing-features li i.fa-times {
+      color: #94a3b8;
+    }
+    
+    /* FAQ Section */
+    .faq {
+      padding: 80px 0;
+      background-color: white;
+    }
+    
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .faq-item {
+      margin-bottom: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+    }
+    
+    .faq-question {
+      background: var(--primary);
+      color: white;
+      padding: 20px 25px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .faq-answer {
+      background: white;
+      padding: 0 25px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    
+    .faq-answer-content {
+      padding: 25px 0;
+      color: var(--light-text);
+    }
+    
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+    }
+    
+    /* Stats Section */
+    .stats {
+      padding: 80px 0;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      color: white;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+    
+    .stat-item {
+      padding: 30px 20px;
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    .stat-label {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    /* Coverage Section */
+    .coverage {
+      padding: 80px 0;
+      background-color: white;
+    }
+    
+    .coverage-map {
+      text-align: center;
+      margin-top: 40px;
+    }
+    
+    .coverage-map img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    /* Footer */
+    .site-footer {
+      background: var(--dark);
+      color: white;
+      padding: 60px 0 30px;
+    }
+    
+    .footer-top {
+      padding-bottom: 40px;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .footer-left img {
+      max-width: 150px;
+      margin-bottom: 20px;
+      filter: brightness(0) invert(1);
+    }
+    
+    .company-name {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .footer-column h3 {
+      font-size: 1.4rem;
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 10px;
+      color: white;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--secondary);
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .footer-links a:hover {
+      color: var(--secondary);
+      transform: translateX(5px);
+    }
+    
+    .footer-links i {
+      width: 20px;
+      text-align: center;
+    }
+    
+    .footer-social {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover {
+      background: var(--secondary);
+      transform: translateY(-3px);
+    }
+    
+    .footer-bottom {
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .copyright {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+    }
+    
+    .contact-info p {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .hero-text {
+        margin-bottom: 40px;
+        max-width: 100%;
+      }
+      
+      .main-navigation ul {
+        display: none;
+      }
+      
+      .mobile-menu-toggle {
+        display: block;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .pricing-card.popular {
+        transform: scale(1);
+      }
+      
+      .header-content {
+        flex-wrap: wrap;
+      }
+      
+      .logo {
+        order: 1;
+      }
+      
+      .mobile-menu-toggle {
+        order: 2;
+      }
+      
+      .header-actions {
+        order: 3;
+        margin-left: auto;
+      }
+      
+      .main-navigation {
+        order: 4;
+        width: 100%;
+        margin-top: 15px;
+      }
+      
+      .main-navigation ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .banner-overlay h1 {
+        font-size: 2rem;
+      }
+      
+      .banner-overlay p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="mobile-menu-toggle">
+          <i class="fas fa-bars" id="mobile-menu-icon" style="color: white; font-size: 24px;"></i>
+        </div>
+        <div class="logo">
+          <a href="index.html">
+            <i class="fas fa-sim-card"></i>
+            <span>MyLocal</span>
+          </a>
+        </div>
+        <nav class="main-navigation">
+          <ul class="nav-links">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="simsieudata.html" class="active">SIM Siêu Data</a></li>
+            <li><a href="simsodep.html">SIM Số Đẹp</a></li>
+            <li><a href="tintuc.html">Tin tức & Ưu đãi</a></li>
+            <li><a href="hotro.html">Hỗ trợ</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <a href="/gio-hang" class="cart-icon">
+            <i class="fas fa-shopping-cart" style="color: white;"></i>
+          </a>
+          <a href="/theo-doi-don-hang" class="order-tracking">
+            <i class="fas fa-receipt" style="color: white;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <div class="container">
+      <div class="marquee">
+        <div class="marquee-content">
+          <span>DATA KHÔNG GIỚI HẠN</span>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='20' viewBox='0 0 4 20'%3E%3Crect width='4' height='20' fill='white'/%3E%3C/svg%3E" alt="SIM" class="separator-img">
+          <span>TỐC ĐỘ CAO 4G/5G</span>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='20' viewBox='0 0 4 20'%3E%3Crect width='4' height='20' fill='white'/%3E%3C/svg%3E" alt="SIM" class="separator-img">
+          <span>GIÁ CHỈ TỪ 50.000Đ/THÁNG</span>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='20' viewBox='0 0 4 20'%3E%3Crect width='4' height='20' fill='white'/%3E%3C/svg%3E" alt="SIM" class="separator-img">
+          <span>ĐĂNG KÝ NGAY - NHẬN ƯU ĐÃI</span>
+        </div>
+      </div>
+      <div class="banner-container">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='400' viewBox='0 0 1200 400'%3E%3Crect width='1200' height='400' fill='%231e40af'/%3E%3Ccircle cx='600' cy='200' r='150' fill='%233b82f6'/%3E%3Ctext x='600' y='200' font-family='Arial' font-size='48' text-anchor='middle' fill='white'%3E4G/5G%3C/text%3E%3Ctext x='600' y='250' font-family='Arial' font-size='64' text-anchor='middle' fill='white' font-weight='bold'%3ESIM SIÊU DATA%3C/text%3E%3C/svg%3E" alt="Sim Siêu Data" class="full-banner">
+        <div class="banner-overlay">
+          <h1>SIM SIÊU DATA - TRẢI NGHIỆM KHÔNG GIỚI HẠN</h1>
+          <p>Tốc độ cao, giá cực rẻ, data không giới hạn cho mọi nhu cầu giải trí và làm việc</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>LỢI ÍCH VƯỢT TRỘI</h2>
+        <p>Trải nghiệm dịch vụ Sim Siêu Data với nhiều ưu đãi đặc biệt</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3>Tốc độ cực cao</h3>
+          <p>Truy cập mạng 4G/5G với tốc độ tối đa, ổn định, không giật lag</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-infinity"></i>
+          </div>
+          <h3>Data không giới hạn</h3>
+          <p>Sử dụng data thoải mái không lo hết dung lượng, phù hợp mọi nhu cầu</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-tags"></i>
+          </div>
+          <h3>Giá thành hợp lý</h3>
+          <p>Gói cước giá rẻ nhất thị trường, chỉ từ 50.000đ/tháng</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>Hỗ trợ 24/7</h3>
+          <p>Đội ngũ hỗ trợ khách hàng chuyên nghiệp, sẵn sàng giải đáp mọi thắc mắc</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-title">
+        <h2>GÓI CƯỚC NỔI BẬT</h2>
+        <p>Lựa chọn gói cước phù hợp với nhu cầu sử dụng của bạn</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <div class="pricing-name">Gói Cơ Bản</div>
+            <div class="pricing-price">50.000đ</div>
+            <div class="pricing-period">/ tháng</div>
+          </div>
+          <div class="pricing-features">
+            <ul>
+              <li><i class="fas fa-check"></i> 5GB data tốc độ cao</li>
+              <li><i class="fas fa-check"></i> Data xem TikTok/Facebook miễn phí</li>
+              <li><i class="fas fa-check"></i> 100 phút gọi nội mạng</li>
+              <li><i class="fas fa-times"></i> Không giới hạn data 2G</li>
+            </ul>
+            <a href="#" class="cta-button">Đăng ký ngay</a>
+          </div>
+        </div>
+        <div class="pricing-card popular">
+          <div class="popular-tag">Phổ biến</div>
+          <div class="pricing-header">
+            <div class="pricing-name">Gói Tiết Kiệm</div>
+            <div class="pricing-price">70.000đ</div>
+            <div class="pricing-period">/ tháng</div>
+          </div>
+          <div class="pricing-features">
+            <ul>
+              <li><i class="fas fa-check"></i> 10GB data tốc độ cao</li>
+              <li><i class="fas fa-check"></i> Data xem TikTok/Facebook/Youtube miễn phí</li>
+              <li><i class="fas fa-check"></i> 200 phút gọi nội mạng</li>
+              <li><i class="fas fa-check"></i> Không giới hạn data 2G</li>
+            </ul>
+            <a href="#" class="cta-button">Đăng ký ngay</a>
+          </div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <div class="pricing-name">Gói Cao Cấp</div>
+            <div class="pricing-price">120.000đ</div>
+            <div class="pricing-period">/ tháng</div>
+          </div>
+          <div class="pricing-features">
+            <ul>
+              <li><i class="fas fa-check"></i> Data không giới hạn tốc độ cao</li>
+              <li><i class="fas fa-check"></i> Data giải trí miễn phí</li>
+              <li><i class="fas fa-check"></i> 500 phút gọi mọi mạng</li>
+              <li><i class="fas fa-check"></i> Không giới hạn data 2G</li>
+            </ul>
+            <a href="#" class="cta-button">Đăng ký ngay</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">500.000+</div>
+          <div class="stat-label">Khách hàng tin dùng</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">99%</div>
+          <div class="stat-label">Hài lòng dịch vụ</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Hỗ trợ khách hàng</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">63</div>
+          <div class="stat-label">Tỉnh thành phủ sóng</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coverage Section -->
+  <section class="coverage">
+    <div class="container">
+      <div class="section-title">
+        <h2>PHỦ SÓNG TOÀN QUỐC</h2>
+        <p>Dịch vụ có mặt tại 63 tỉnh thành với chất lượng tốt nhất</p>
+      </div>
+      <div class="coverage-map">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23f1f5f9'/%3E%3Cpath d='M100,200 L200,150 L300,250 L400,200 L500,300 L600,250 L700,350' stroke='%233b82f6' stroke-width='4' fill='none'/%3E%3Ccircle cx='100' cy='200' r='10' fill='%231e40af'/%3E%3Ccircle cx='200' cy='150' r='10' fill='%231e40af'/%3E%3Ccircle cx='300' cy='250' r='10' fill='%231e40af'/%3E%3Ccircle cx='400' cy='200' r='10' fill='%231e40af'/%3E%3Ccircle cx='500' cy='300' r='10' fill='%231e40af'/%3E%3Ccircle cx='600' cy='250' r='10' fill='%231e40af'/%3E%3Ccircle cx='700' cy='350' r='10' fill='%231e40af'/%3E%3Ctext x='100' y='190' text-anchor='middle' font-size='14' fill='%231e293b'%3EHà Nội%3C/text%3E%3Ctext x='200' y='140' text-anchor='middle' font-size='14' fill='%231e293b'%3EHải Phòng%3C/text%3E%3Ctext x='300' y='240' text-anchor='middle' font-size='14' fill='%231e293b'%3EĐà Nẵng%3C/text%3E%3Ctext x='400' y='190' text-anchor='middle' font-size='14' fill='%231e293b'%3EHuế%3C/text%3E%3Ctext x='500' y='290' text-anchor='middle' font-size='14' fill='%231e293b'%3ENha Trang%3C/text%3E%3Ctext x='600' y='240' text-anchor='middle' font-size='14' fill='%231e293b'%3EĐà Lạt%3C/text%3E%3Ctext x='700' y='340' text-anchor='middle' font-size='14' fill='%231e293b'%3EHồ Chí Minh%3C/text%3E%3C/svg%3E" alt="Bản đồ phủ sóng">
+      </div>
+    </div>
+  </section>
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-icon').addEventListener('click', function() {
+      const navMenu = document.querySelector('.nav-links');
+      if (navMenu.style.display === 'flex') {
+        navMenu.style.display = 'none';
+      } else {
+        navMenu.style.display = 'flex';
+      }
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        faqItem.classList.toggle('active');
+      });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const navMenu = document.querySelector('.nav-links');
+      const menuIcon = document.getElementById('mobile-menu-icon');
+      
+      if (navMenu && navMenu.style.display === 'flex' && 
+          !navMenu.contains(event.target) && 
+          event.target !== menuIcon) {
+        navMenu.style.display = 'none';
+      }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
