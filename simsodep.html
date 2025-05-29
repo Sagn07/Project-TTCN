@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Siêu nhà mạng data, Khám phá không giới hạn, Giá không thể hợp lý hơn !!!" />
+  <title>HITC Travel</title>
+  <link rel="stylesheet" href="src/css/reset.css">
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="stylesheet" href="src/css/responsive.css">
+  <style>
+    /* Custom styles for sim số đẹp */
+    .sim-hero {
+      background: linear-gradient(135deg, #1a365f 0%, #2a5298 100%);
+      color: white;
+    }
+    .sim-filter {
+      background: #f8f9fa;
+      padding: 40px 0;
+      margin: 50px 0;
+    }
+    .filter-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .filter-group {
+      position: relative;
+    }
+    .filter-select {
+      width: 100%;
+      padding: 12px 20px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      appearance: none;
+      background: white url("src/assets/chevron-down.svg") no-repeat right 15px center;
+    }
+    .sim-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 40px 0;
+    }
+    .sim-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+    .sim-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    .sim-number {
+      font-size: 1.8rem;
+      color: #1e40af;
+      font-weight: 700;
+      text-align: center;
+      margin: 15px 0;
+    }
+    .sim-price {
+      color: #dc2626;
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    .sim-badges {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      display: flex;
+      gap: 8px;
+    }
+    .sim-badge {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .badge-network {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+    .badge-type {
+      background: #ffedd5;
+      color: #c2410c;
+    }
+    .sim-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .phongthuy-section {
+      background: #fff7ed;
+      padding: 60px 0;
+      margin: 50px 0;
+    }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 30px 0;
+    }
+    .page-item {
+      padding: 8px 14px;
+      background: #f1f5f9;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #1e293b;
+    }
+    .page-item.active {
+      background: #1d4ed8;
+      color: white;
+    }
+    .btn-primary, .btn-secondary {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background-color: #2563eb;
+      color: white;
+    }
+    .btn-secondary {
+      background-color: #f1f5f9;
+      color: #1e293b;
+    }
+    .phongthuy-content {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .phongthuy-image img {
+      max-width: 300px;
+      border-radius: 12px;
+    }
+    .phongthuy-list {
+      list-style: none;
+      padding: 0;
+    }
+    .phongthuy-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0;
+    }
+    .phongthuy-list img {
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <!-- Header Section -->
+    <header class="site-header">
+      <div class="container">
+        <div class="header-content">
+          <div class="mobile-menu-toggle">
+            <img src="src/assets/menu.svg" alt="Menu" id="mobile-menu-icon">
+          </div>
+          <div class="logo">
+            <a href="index.html">
+              <img src="src/assets/logochu-trang-08.png" alt="HITC Travel" id="logo-image">
+            </a>
+          </div>
+          <nav class="main-navigation">
+            <ul class="nav-links">
+              <li><a href="simsieudata.html">SIM Siêu Data</a></li>
+              <li><a href="simsodep.html">SIM Số Đẹp</a></li>
+              <li><a href="tintuc.html">Tin tức & Ưu đãi</a></li>
+              <li><a href="hotro.html">Hỗ trợ</a></li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <a href="/sim-sieu-data/gio-hang" class="cart-icon">
+              <img src="src/assets/shopping-cart.svg" alt="Giỏ hàng" id="cart-icon">
+            </a>
+            <a href="/tracking-order" class="order-tracking">
+              <img src="src/assets/receipt.svg" alt="Đơn mua" id="order-icon">
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner sim-hero">
+      <div class="container">
+        <div class="marquee">
+          <div class="marquee-content">
+            <span>SIM TỨ QUÝ 8</span>
+            <img src="src/assets/Rectangle.png" alt="SIM" class="separator-img">
+            <span>SIM LỤC QUÝ 6</span>
+            <img src="src/assets/Rectangle.png" alt="SIM" class="separator-img">
+            <span>SIM ÔNG ĐỊA</span>
+            <img src="src/assets/Rectangle.png" alt="SIM" class="separator-img">
+            <span>SIM THẦN TÀI</span>
+          </div>
+        </div>
+        <div class="banner-container">
+          <img src="src/assets/banner-simdep.jpg" alt="Sim Số Đẹp" class="full-banner">
+          <div class="banner-overlay">
+            <h1>KHO SIM SỐ VIP ĐỘC QUYỀN</h1>
+            <p>Hơn 10.000 sim phong thủy - Giá gốc tại kho</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bộ lọc Sim -->
+    <section class="sim-filter">
+      <div class="container">
+        <div class="filter-container">
+          <div class="filter-group">
+            <select class="filter-select" id="sim-type">
+              <option value="">Loại sim</option>
+              <option value="tam-hoa">Tam Hoa</option>
+              <option value="tu-quy">Tứ Quý</option>
+              <option value="ong-dia">Ông Địa</option>
+              <option value="than-tai">Thần Tài</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <select class="filter-select" id="price-range">
+              <option value="">Mức giá</option>
+              <option value="0-1">Dưới 1 triệu</option>
+              <option value="1-5">1 - 5 triệu</option>
+              <option value="5-10">5 - 10 triệu</option>
+              <option value="10-50">10 - 50 triệu</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <select class="filter-select" id="network">
+              <option value="">Nhà mạng</option>
+              <option value="viettel">Viettel</option>
+              <option value="mobifone">Mobifone</option>
+              <option value="vinaphone">Vinaphone</option>
+            </select>
+          </div>
+          <button class="filter-btn">Tìm sim</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Danh sách Sim -->
+    <section class="container">
+      <div class="sim-grid">
+        <div class="sim-card">
+          <div class="sim-badges">
+            <span class="sim-badge badge-network">Viettel</span>
+            <span class="sim-badge badge-type">Tứ Quý 8</span>
+          </div>
+          <div class="sim-number">0896.888.888</div>
+          <div class="sim-price">15.000.000đ</div>
+          <div class="sim-actions">
+            <button class="btn-primary">Mua ngay</button>
+            <button class="btn-secondary">Chi tiết</button>
+          </div>
+        </div>
+        <!-- Thêm các sim khác -->
+      </div>
+
+      <!-- Phân trang -->
+      <div class="pagination">
+        <a href="#" class="page-item active">1</a>
+        <a href="#" class="page-item">2</a>
+        <a href="#" class="page-item">3</a>
+        <span class="page-item">...</span>
+        <a href="#" class="page-item">10</a>
+      </div>
+    </section>
+
+    <!-- Phong Thủy Sim -->
+    <section class="phongthuy-section">
+      <div class="container">
+        <div class="phongthuy-content">
+          <div class="phongthuy-image">
+            <img src="src/assets/phongthuy-sim.jpg" alt="Phong Thủy Sim">
+          </div>
+          <div class="phongthuy-text">
+            <h2>SIM HỢP MỆNH - TÀI LỘC DỒI DÀO</h2>
+            <ul class="phongthuy-list">
+              <li>
+                <img src="src/assets/check-circle.svg" alt="Check">
+                <span>Luận giải sim theo ngũ hành bản mệnh</span>
+              </li>
+              <li>
+                <img src="src/assets/check-circle.svg" alt="Check">
+                <span>Tư vấn sim hợp tuổi, công việc</span>
+              </li>
+              <li>
+                <img src="src/assets/check-circle.svg" alt="Check">
+                <span>Phân tích thần số học chuyên sâu</span>
+              </li>
+            </ul>
+            <button class="btn-primary">Đặt lịch tư vấn</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <!-- Giữ nguyên như trang chủ -->
+    </footer>
+  </div>
+
+  <script>
+    // Xử lý filter
+    document.querySelector('.filter-btn').addEventListener('click', () => {
+      const type = document.getElementById('sim-type').value;
+      const price = document.getElementById('price-range').value;
+      const network = document.getElementById('network').value;
+      console.log(`Filtering by: ${type}, ${price}, ${network}`);
+    });
+  </script>
+</body>
+</html>

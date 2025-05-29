@@ -746,3 +746,31 @@ body {
   font-size: 0.9rem;
   opacity: 0.8;
 }
+/* responsive.css */
+@media (max-width: 768px) {
+  .sim-filter .filter-row {
+    flex-direction: column;
+  }
+  
+  .sim-card {
+    margin-bottom: 20px;
+  }
+  
+  .phongthuy-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .sim-number {
+    font-size: 1.4rem;
+  }
+  
+  .sim-actions {
+    flex-direction: column;
+  }
+  
+  .btn-primary, .btn-secondary {
+    width: 100%;
+  }
+}
