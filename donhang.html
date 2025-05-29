@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Siêu nhà mạng data, Khám phá không giới hạn, Giá không thể hợp lý hơn !!!" />
+  <title>HITC Travel</title>
+  <link rel="stylesheet" href="src/css/reset.css">
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="stylesheet" href="src/css/responsive.css">
+</head>
+
+<body>
+  <div id="root">
+    <!-- Header Section -->
+    <header class="site-header">
+      <div class="container">
+        <div class="header-content">
+          <div class="mobile-menu-toggle">
+            <img src="" alt="Menu" id="mobile-menu-icon">
+          </div>
+          <div class="logo">
+            <a href="index.html">
+              <img src="src/assets/logochu-trang-08.png" alt="HITC Travel" id="logo-image">
+            </a>
+          </div>
+          <nav class="main-navigation">
+            <ul class="nav-links">
+              <li><a href="/sim-sieu-data">SIM Siêu Data</a></li>
+              <li><a href="/sim-so-dep">SIM Số Đẹp</a></li>
+              <li><a href="tintuc.html">Tin tức & Ưu đãi</a></li>
+              <li><a href="hotro.html">Hỗ trợ</a></li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <a href="giohang.html" class="cart-icon">
+              <img src="src/assets/shopping-cart.svg" alt="Giỏ hàng" id="cart-icon">
+            </a>
+            <a href="donhang.html" class="order-tracking">
+              <img src="src/assets/receipt.svg" alt="Đơn mua" id="order-icon">
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="donhang">
+      <div class="container">
+          <img src="src/assets/bg-search.svg" alt="">
+          <h1>Tra cứu đơn hàng</h1>
+          <div class="content">
+            <p>Mã đơn hàng đã được gửi đến email của bạn.</p>
+            <p>Bạn có thể nhập mã đơn hàng xuất dưới đây để theo dõi trạng thái đơn hàng.</p>
+          </div>
+        <div class="input-container">
+            <input type="text" id="orderIdInput" placeholder="Nhập mã đơn hàng">
+            <button onclick="trackOrder()">Tra cứu</button>
+        </div>
+        <p class="error" id="errorMessage">Mã đơn hàng không hợp lệ!</p>
+        <div class="result" id="resultSection">
+            <h2>Thông tin đơn hàng</h2>
+            <p><strong>Mã đơn hàng:</strong> <span id="orderId"></span></p>
+            <p><strong>Ngày đặt hàng:</strong> <span id="orderDate"></span></p>
+            <p><strong>Trạng thái:</strong> <span id="orderStatus"></span></p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="container">
+            <div class="footer-left">
+              <img src="src/assets/logokochu-trang-05.png" alt="Local" id="footer-left-image">
+              <h3 class="company-name">HITC TRAVEL</h3>
+              <h2 class="company-name">CÔNG TY CỔ PHẦN DU LỊCH & TIN HỌC CÔNG NGHỆ CAO HITC</h2>
+            </div>
+          <div class="footer-right">
+            <h3>Liên hệ với chúng tôi</h3>
+            <div class="contact-info">
+                <p><span class="icon"><img src="src/assets/gps.png" alt="Location"></span>Số 6, ngõ 274/3, phố Ngọc Lâm, Phường Ngọc Lâm, Quận Long Biên, Thành phố Hà Nội</p>
+                <p><span class="icon"><img src="src/assets/phone-call.png" alt="Location"></span>0909 023 386</p>
+                <p><span class="icon"><img src="src/assets/gmail.png" alt="Location"></span>cskh.hitc@gmail.com</p>
+                <p><span class="icon"><img src="src/assets/3d-alarm.png" alt="Location"></span>Giờ làm việc: Thứ 2 - Thứ 7: 8:00 - 17:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="copyright">© 2025 HITC Travel. All rights reserved</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script type="module" src="src/main.ts"></script>
+<script>
+        // Mô phỏng dữ liệu từ backend
+        const mockApiResponse = {
+            orderId: "DH123456",
+            status: "delivered",
+            orderDate: "2025-05-25T10:00:00Z",
+            statusUpdates: [
+                { status: "pending", timestamp: "2025-05-25T10:00:00Z" },
+                { status: "confirmed", timestamp: "2025-05-25T12:00:00Z" },
+                { status: "shipped", timestamp: "2025-05-26T09:00:00Z" },
+                { status: "delivered", timestamp: "2025-05-28T15:00:00Z" }
+            ]
+        };
+
+        // Bản đồ trạng thái sang tiếng Việt
+        const statusMap = {
+            pending: "Đang chờ",
+            confirmed: "Xác nhận",
+            shipped: "Đang giao",
+            delivered: "Đã giao"
+        };
+
+        function trackOrder() {
+            const orderId = document.getElementById('orderIdInput').value.trim();
+            const errorMessage = document.getElementById('errorMessage');
+            const resultSection = document.getElementById('resultSection');
+
+            if (!orderId) {
+                errorMessage.style.display = 'block';
+                resultSection.style.display = 'none';
+                return;
+            }
+
+            // Mô phỏng gọi API
+            // Thay thế bằng fetch('/api/order/' + orderId) trong thực tế
+            setTimeout(() => {
+                const data = mockApiResponse; // Dữ liệu giả lập
+
+                if (data) {
+                    errorMessage.style.display = 'none';
+                    resultSection.style.display = 'block';
+
+                    // Hiển thị thông tin đơn hàng
+                    document.getElementById('orderId').textContent = data.orderId;
+                    document.getElementById('orderDate').textContent = new Date(data.orderDate).toLocaleString('vi-VN');
+                    document.getElementById('orderStatus').textContent = statusMap[data.status] || data.status;
+                } else {
+                    errorMessage.style.display = 'block';
+                    resultSection.style.display = 'none';
+                }
+            }, 500); // Giả lập độ trễ mạng
+        }
+    </script>
+</body>
+
+</html>

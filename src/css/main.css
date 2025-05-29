@@ -650,6 +650,83 @@ body {
     background-color: #999;
 }
 
+/* Đơn hàng */
+.donhang .container {
+    text-align: center;
+    padding: 40px;
+}
+.donhang h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.donhang .content {
+    margin-bottom: 20px;
+}
+.donhang p {
+    font-size: 14px;
+    color: #666;
+}
+.donhang .input-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.donhang input {
+    width: 300px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+.donhang button {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: white;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.donhang button:hover {
+    background-color: #e04343;
+}
+
+.donhang img {
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.donhang .result {
+    display: none;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    padding: 20px;
+    text-align: left;
+}
+.result h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.result p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+.donhang .error {
+    color: red;
+    font-size: 14px;
+    display: none;
+    margin-top: 10px;
+}
+
 /* Footer Styles */
 .site-footer {
   background-color: var(--bg-dark);
