@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gói A68D</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .package {
+      max-width: 400px;
+      background-color: #d91c1c;
+      color: white;
+      border-radius: 16px;
+      padding: 20px;
+      position: relative;
+      margin: 40px auto;
+    }
+
+    .badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #ffd700;
+      color: red;
+      font-weight: bold;
+      padding: 8px;
+      border-bottom-left-radius: 12px;
+    }
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .big-text {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background-color: white;
+      opacity: 0.3;
+      margin: 15px 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li::before {
+      content: '✔';
+      margin-right: 8px;
+      color: white;
+    }
+
+    .note {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 18px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .price span {
+      font-size: 22px;
+      color: white;
+    }
+
+    .buy {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .cart-icon {
+      width: 40px;
+      height: 40px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      font-size: 20px;
+    }
+
+    .btn-buy {
+      flex: 1;
+      background-color: white;
+      color: #d91c1c;
+      padding: 10px 20px;
+      margin-left: 10px;
+      border-radius: 20px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background: white;
+      max-width: 600px;
+      margin: 80px auto;
+      padding: 30px;
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .modal-header {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .cycle-box {
+      border: 2px solid #f43f5e;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 15px 0;
+      position: relative;
+    }
+
+    .cycle-box input[type="radio"] {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      accent-color: red;
+    }
+
+    .discount {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 5px 0;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    .discount-tag {
+      background-color: #f43f5e;
+      color: white;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    .quantity {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    .quantity button {
+      width: 32px;
+      height: 32px;
+      border: 1px solid #ccc;
+      background: white;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 30px;
+      gap: 10px;
+    }
+
+    .modal-footer button {
+      padding: 10px 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cancel-btn {
+      border: 1px solid #f43f5e;
+      color: #f43f5e;
+      background: white;
+    }
+
+    .confirm-btn {
+      background: #f43f5e;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div class="package">
+  <div class="badge">GIẢM 10K</div>
+  <div class="title">
+    <div>Gói A68D</div>
+    <div>Data tốc độ cao - Chu kỳ 20 ngày</div>
+  </div>
+
+  <div class="big-text">4GB/ngày</div>
+
+  <hr>
+
+  <div>Miễn phí data tốc độ cao (80GB/chu kỳ)</div>
+  <ul>
+    <li>Lướt TikTok, Facebook, YouTube,…</li>
+    <li>Nghe, gọi, nhắn tin: Zalo, Telegram, Viber,…</li>
+    <li>Chơi game: Liên Quân, PUBG, Free Fire,…</li>
+  </ul>
+
+  <div class="note">Đã nạp sẵn gói cước chu kỳ đầu</div>
+  <div class="note">Giảm 10K cho chu kỳ đầu tiên</div>
+
+  <hr>
+
+  <div class="price">
+    <div>Thanh toán</div>
+    <span>68.000đ/20 ngày</span>
+  </div>
+
+  <div class="buy">
+    <div class="cart-icon">🛒</div>
+    <button class="btn-buy" onclick="openModal()">MUA NGAY</button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-header">Chu kỳ gói</div>
+
+    <h2 style="color: #f43f5e;">Gói A68D • 4GB/ngày</h2>
+
+    <div><strong>Chọn chu kỳ</strong></div>
+    <div class="cycle-box">
+      <input type="radio" name="cycle" checked />
+      <div>1 chu kỳ</div>
+      <div class="discount">
+        <div class="old-price">68K</div>
+        <div class="discount-tag">-10K</div>
+      </div>
+      <div><strong>58.000đ</strong></div>
+    </div>
+
+    <div><strong>Chọn số lượng</strong></div>
+    <div class="quantity">
+      <button onclick="decreaseQty()">−</button>
+      <span id="qty">1</span>
+      <button onclick="increaseQty()">+</button>
+    </div>
+
+    <div class="modal-footer">
+      <button class="cancel-btn" onclick="closeModal()">HUỶ</button>
+      <button class="confirm-btn">MUA NGAY</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openModal() {
+    document.getElementById("modal").style.display = "block";
+  }
+
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+
+  let qty = 1;
+  const qtySpan = document.getElementById("qty");
+
+  function increaseQty() {
+    qty++;
+    qtySpan.textContent = qty;
+  }
+
+  function decreaseQty() {
+    if (qty > 1) {
+      qty--;
+      qtySpan.textContent = qty;
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -14,14 +14,16 @@ body {
 
 /* Phần tiêu đề */
 .hero {
-  background-image: url(/src/assets/IMG_20250524_160210.png); /* Thay bằng đường dẫn ảnh nền */
+  background-image: url(src/assets/IMG_20250524_160210.png); /* Thay bằng đường dẫn ảnh nền */
   background-size: cover;
   background-position: center;
   height: 100vh;
   display: flex;
   align-items: center;
   color: #fff;
-  padding: 70px 20px; 
+  padding-top: 70px;
+  padding-left: 20px;
+  padding-bottom: 20px;
   height: 100%;
 }
 
@@ -36,7 +38,7 @@ body {
   width: 600px;
 }
 .GoiData{
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   margin-top: 0;
   justify-content: space-between;
   align-items: center;
@@ -91,6 +93,7 @@ body {
 }
 .package-info .raw-html span{
   color: white;
+  font-size: 20px;
 }
 .package-info .raw-html strong{
   font-weight: bolder;
@@ -384,7 +387,7 @@ body {
     }
 
     .tab.active {
-      background: #d8232a;
+      background: #f44336;
       color: white;
       font-weight: bold;
     }
