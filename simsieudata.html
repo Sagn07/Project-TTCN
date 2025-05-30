@@ -95,7 +95,7 @@
           <div class="Package-duration">
             <span class="Text-D">đ</span>
             <span class="Icon-Cheo">/</span>
-            <span>8 ngày</span>
+            <span style="font-weight: 400">8 ngày</span>
           </div>
         </div>
       
@@ -150,6 +150,7 @@
               </div>
             </div>
           </div>
+
           <div id="modal2" class="modal">
             <div class="modal-content">
               <span class="close" onclick="toggleModal2()" style="color: black; font-size: 40px;">&times;</span>
@@ -192,7 +193,55 @@
               </div>
 
               <div class="actions">
-                <button class="cancel" onclick="toggleModal()">HỦY</button>
+                <button class="cancel" onclick="toggleModal2()">HỦY</button>
+                <button class="add-to-cart" style="font-family: 'Be Vietnam Pro', sans-serif;">MUA NGAY</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="modal2" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="toggleModal2()" style="color: black; font-size: 40px;">&times;</span>
+              <h2 style="color: black; text-align: center;font-family: 'Be Vietnam Pro', sans-serif;">Chu kỳ gói</h2>
+              <h3 style="color: black;padding-bottom: 2rem;font-size: 30px;"><span style="color:#d32f2f;padding-bottom: 2rem;font-size: 30px;">Gói DISCOVER</span> • 7GB/8ngày</h3>
+
+              <p style="color: black;font-family: 'Be Vietnam Pro', sans-serif">Chọn chu kỳ</p>
+              <div class="cycles">
+                <label class="cycle selected">
+                  <input type="radio" name="cycle" checked>
+                  <div style="color: black;font-family: 'Be Vietnam Pro', sans-serif">1 chu kỳ<br><strong>50.000đ</strong></div>
+                </label>
+
+                <label class="cycle">
+                  <input type="radio" name="cycle">
+                  <div style="color: black;font-family: 'Be Vietnam Pro', sans-serif">
+                    6 chu kỳ<br>
+                    <span class="bonus">Tặng thêm 10 ngày</span><br>
+                    <span class="strikethrough">300K</span> <span class="discount">-50K</span><br>
+                    <strong>250.000đ</strong>
+                  </div>
+                </label>
+
+                <label class="cycle">
+                  <input type="radio" name="cycle">
+                  <div style="color: black;font-family: 'Be Vietnam Pro', sans-serif">
+                    12 chu kỳ<br>
+                    <span class="bonus">Tặng thêm 30 ngày</span><br>
+                    <span class="strikethrough">600K</span> <span class="discount">-130K</span><br>
+                    <strong>470.000đ</strong>
+                  </div>
+                </label>
+              </div>
+
+              <p style="color: black;font-family: 'Be Vietnam Pro', sans-serif">Chọn số lượng</p>
+              <div class="quantity">
+                <button style="color: black;" onclick="changeQuantity(-1)">−</button>
+                <span style="color: black;" id="qty">1</span>
+                <button style="color: black;" onclick="changeQuantity(1)">+</button>
+              </div>
+
+              <div class="actions">
+                <button class="cancel" onclick="toggleModal2()">HỦY</button>
                 <button class="add-to-cart" style="font-family: 'Be Vietnam Pro', sans-serif;">MUA NGAY</button>
               </div>
             </div>
@@ -270,13 +319,13 @@
             <div class="flex-gap">
               <span class="data-tocdocao">
                 <span>
-                  <p style="margin: 0;font-weight: 700">Data tốc độ cao - chu kỳ 16 ngày</p>
+                  <p style="margin: 0;font-weight: 700;font-family: 'Be Vietnam Pro', sans-serif">Data tốc độ cao - chu kỳ 16 ngày</p>
                 </span>
               </span>
             </div>
           </div>
         </div>
-        <ul>
+        <ul style="font-family: 'Be Vietnam Pro', sans-serif">
           <li>Miễn phí data tốc độ cao (10GB/16 ngày)</li>
           <li>•	Đủ cho chuyến đi trung bình: Phù hợp cho những ai muốn khám phá nhiều hơn một thành phố hoặc dành thời gian thư giãn tại Việt Nam</li>
           <li>•	Thỏa sức truy cập: Thoải mái lướt web, sử dụng mạng xã hội, xem video và gọi video call</li>
@@ -305,13 +354,13 @@
             <div class="flex-gap">
               <span class="data-tocdocao">
                 <span>
-                  <p style="margin: 0;font-weight: 700">Data tốc độ cao - chu kỳ 30 ngày</p>
+                  <p style="margin: 0;font-weight: 700;font-family: 'Be Vietnam Pro', sans-serif">Data tốc độ cao - chu kỳ 30 ngày</p>
                 </span>
               </span>
             </div>
           </div>
         </div>
-        <ul>
+        <ul style="font-family: 'Be Vietnam Pro', sans-serif">
           <li>Miễn phí data tốc độ cao (15GB/30 ngày)</li>
           <li>•	Kết nối xuyên suốt cả tháng: Lựa chọn tối ưu cho những chuyến đi dài ngày, xuyên Việt hoặc du khách muốn trải nghiệm sâu sắc văn hóa địa phương</li>
           <li>•	Không lo hết data: 15GB data đủ để bạn thoải mái sử dụng mọi ứng dụng, chia sẻ ảnh và video liên tục</li>
