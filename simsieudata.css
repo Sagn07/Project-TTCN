@@ -34,6 +34,11 @@ body {
   background-color: rgba(0, 0, 0, 0.31);
   padding: 40px;
   width: 600px;
+  transition: transform 0.5s ease;
+}
+.hero-content:hover{
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
 }
 .GoiData{
   margin-bottom: 20px;
@@ -346,7 +351,6 @@ body {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  height: 100%;
 }
 .Danh-Sach .lg-container .list-package-title{
   align-items: flex-start;
@@ -475,6 +479,11 @@ body {
       flex-direction: column;
       justify-content: space-between;
       position: relative;
+      transition: transform 0.5s ease;
+    }
+    .plan:hover{
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
     }
 
     .plan.red {

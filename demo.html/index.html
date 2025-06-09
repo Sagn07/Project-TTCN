@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gói Cước</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      background: #ffd7dc;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .tab.active {
+      background: #f33;
+      color: white;
+      font-weight: bold;
+    }
+
+    .plans-container {
+      display: none;
+    }
+
+    .plans-container.active {
+      display: block;
+    }
+
+    .slider-wrapper {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      display: flex;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+    }
+
+    .slider-track {
+      display: flex;
+      gap: 16px;
+      padding-bottom: 10px;
+    }
+
+    .slider-wrapper::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .slider-wrapper::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 10px;
+    }
+
+    .slider-wrapper:hover::-webkit-scrollbar-thumb {
+      background: #999;
+    }
+
+    .plan {
+      flex: 0 0 280px;
+      scroll-snap-align: start;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .plan.highlight {
+      border: 2px solid #f33;
+      background-color: #fceaea;
+    }
+
+    .badge {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: yellow;
+      color: red;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 50%;
+    }
+
+    .plan h3 {
+      color: #c00;
+    }
+
+    .plan .sub {
+      font-style: italic;
+      margin: 5px 0 10px;
+    }
+
+    .plan h2 {
+      color: #c00;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 15px 0;
+      color: #333;
+    }
+
+    .buy-btn {
+      background: #f33;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="tabs">
+    <button class="tab active" data-tab="data">DATA</button>
+    <button class="tab" data-tab="combo">COMBO</button>
+  </div>
+
+  <!-- DATA Carousel -->
+  <div class="plans-container active" id="data">
+    <div class="slider-wrapper">
+      <div class="slider-track">
+        <div class="plan highlight">
+          <div class="badge">GIẢM 10K</div>
+          <h3>Gói A68D</h3>
+          <p class="sub">Chu kỳ 20 ngày</p>
+          <h2>4GB/ngày</h2>
+          <ul>
+            <li>✔️ 80GB tốc độ cao</li>
+            <li>✔️ Facebook, TikTok, YouTube...</li>
+          </ul>
+          <p><strong>Giảm 10K cho chu kỳ đầu</strong></p>
+          <div class="price">68.000đ</div>
+          <button class="buy-btn">MUA NGAY</button>
+        </div>
+
+        <div class="plan">
+          <h3>Gói A69S</h3>
+          <p class="sub">Chu kỳ 30 ngày</p>
+          <h2>2GB/ngày</h2>
+          <ul>
+            <li>✔️ 60GB tốc độ cao</li>
+            <li>✔️ Facebook, TikTok, YouTube...</li>
+          </ul>
+          <div class="price">69.000đ</div>
+          <button class="buy-btn">MUA NGAY</button>
+        </div>
+
+        <div class="plan">
+          <h3>Gói A79S</h3>
+          <p class="sub">Chu kỳ 30 ngày</p>
+          <h2>3GB/ngày</h2>
+          <ul>
+            <li>✔️ 90GB tốc độ cao</li>
+            <li>✔️ Full truy cập OTT</li>
+          </ul>
+          <div class="price">79.000đ</div>
+          <button class="buy-btn">MUA NGAY</button>
+        </div>
+
+        <div class="plan">
+          <h3>Gói A88D</h3>
+          <p class="sub">Chu kỳ 20 ngày</p>
+          <h2>6GB/ngày</h2>
+          <ul>
+            <li>✔️ 120GB tốc độ cao</li>
+            <li>✔️ Ưu tiên TikTok, YouTube</li>
+          </ul>
+          <div class="price">88.000đ</div>
+          <button class="buy-btn">MUA NGAY</button>
+        </div>
+
+        <div class="plan highlight">
+          <div class="badge">HOT</div>
+          <h3>Gói A119M</h3>
+          <p class="sub">Chu kỳ 30 ngày</p>
+          <h2>10GB/ngày</h2>
+          <ul>
+            <li>✔️ 300GB tốc độ cao</li>
+            <li>✔️ Full gọi + OTT</li>
+          </ul>
+          <div class="price">119.000đ</div>
+          <button class="buy-btn">MUA NGAY</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMBO -->
+  <div class="plans-container" id="combo">
+    <div class="slider-track">
+      <div class="plan">
+        <h3>Gói BUNDLE_A69S_YT</h3>
+        <p class="sub">Chu kỳ 30 ngày</p>
+        <h2>2GB/ngày</h2>
+        <ul>
+          <li>✔️ 60GB tốc độ cao</li>
+          <li>✔️ Miễn phí YouTube</li>
+        </ul>
+        <div class="price">79.000đ</div>
+        <button class="buy-btn">MUA NGAY</button>
+      </div>
+
+      <div class="plan highlight">
+        <h3>Gói BUNDLE_A69S_YT_FB</h3>
+        <p class="sub">Chu kỳ 30 ngày</p>
+        <h2>2GB/ngày</h2>
+        <ul>
+          <li>✔️ 60GB tốc độ cao</li>
+          <li>✔️ YouTube + Facebook Free</li>
+        </ul>
+        <div class="price">89.000đ</div>
+        <button class="buy-btn">MUA NGAY</button>
+      </div>
+
+      <div class="plan">
+        <h3>Gói BUNDLE_A79S_YT</h3>
+        <p class="sub">Chu kỳ 30 ngày</p>
+        <h2>3GB/ngày</h2>
+        <ul>
+          <li>✔️ 90GB tốc độ cao</li>
+          <li>✔️ YouTube không giới hạn</li>
+        </ul>
+        <div class="price">89.000đ</div>
+        <button class="buy-btn">MUA NGAY</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const containers = document.querySelectorAll('.plans-container');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        containers.forEach(c => c.classList.remove('active'));
+        const id = tab.getAttribute('data-tab');
+        document.getElementById(id).classList.add('active');
+      });
+    });
+
+    // PC: Scroll ngang bằng chuột
+    const slider = document.querySelector('#data .slider-wrapper');
+    slider.addEventListener('wheel', (e) => {
+      if (e.deltaY === 0) return;
+      e.preventDefault();
+      slider.scrollLeft += e.deltaY;
+    }, { passive: false });
+    // === AUTO SCROLL FOR DATA CAROUSEL ===
+let autoScrollInterval;
+let scrollAmount = 300; // pixels per step
+const track = document.querySelector('#data .slider-wrapper');
+
+function startAutoScroll() {
+  autoScrollInterval = setInterval(() => {
+    // If reached end, scroll to start
+    if (track.scrollLeft + track.clientWidth >= track.scrollWidth) {
+      track.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  }, 3000); // every 3s
+}
+
+// Optional: stop auto scroll if user interacts
+track.addEventListener('wheel', () => clearInterval(autoScrollInterval), { once: true });
+track.addEventListener('touchstart', () => clearInterval(autoScrollInterval), { once: true });
+
+startAutoScroll();
+  </script>
+</body>
+</html>

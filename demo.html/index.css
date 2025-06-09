@@ -1,0 +1,95 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  border: none;
+  background: #ffd7dc;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #f33;
+  color: white;
+  font-weight: bold;
+}
+
+.plans {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.plan {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.plan.highlight {
+  border: 2px solid #f33;
+  background-color: #fceaea;
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: yellow;
+  color: red;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
+.plan h3 {
+  color: #c00;
+}
+
+.plan .sub {
+  font-style: italic;
+  margin: 5px 0 10px;
+}
+
+.plan h2 {
+  color: #c00;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px 0;
+  color: #333;
+}
+
+.buy-btn {
+  background: #f33;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+.hidden {
+  display: none;
+}

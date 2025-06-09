@@ -223,9 +223,9 @@
 
             <div class="tabs">
               <div class="tab active" onclick="showTab('data')">Data</div>
-              <!--<div class="tab" onclick="showTab('combo')">COMBO</div>
+              <div class="tab" onclick="showTab('combo')">COMBO</div>
               <div class="tab" onclick="showTab('data-thoai')">DATA - THOẠI</div>
-              <div class="tab" onclick="showTab('topping')">TOPPING</div>-->
+              <div class="tab" onclick="showTab('topping')">TOPPING</div>
             </div>
 
           <div id="data" class="plans-container active">
@@ -280,14 +280,14 @@
               </div>
             </div>
 
-            <div class="plan" style="font-family: 'Be Vietnam Pro', sans-serif">
+            <div class="plan">
               <div class="styles_packageItemTop__CcsJl">
                 <div class="flex flex-col w-fit styles_packageItemNameContent__LVo5U">
                   <div>
-                    <span class="font-bold-white" style="color: red;">Gói EXPLORER (HITC2)</span>
+                    <span class="font-bold-white" style="font-family: 'Be Vietnam Pro', sans-serif;color: red;">Gói EXPLORER (HITC2)</span>
                   </div>
                   <div class="Text-4GB">
-                    <span class="font-bold-4GB" style="color: black;">10GB</span>
+                    <span class="font-bold-4GB" style="font-family: 'Be Vietnam Pro', sans-serif;color: black;">10GB</span>
                   </div>
                 </div>
                 <div class="flex-col">
@@ -303,26 +303,42 @@
               <ul style="font-family: 'Be Vietnam Pro', sans-serif">
                 <li>Miễn phí data tốc độ cao (10GB/16 ngày)</li>
                 <li>•	Đủ cho chuyến đi trung bình: Phù hợp cho những ai muốn khám phá nhiều hơn một thành phố hoặc dành thời gian thư giãn tại Việt Nam</li>
-                <li>•	Thỏa sức truy cập: Thoải mái lướt web, sử dụng mạng xã hội, xem video và gọi video call</li>
+                <li>• Thỏa sức truy cập: Thoải mái lướt web, sử dụng mạng xã hội, xem video và gọi video call</li>
                 <li>•	Giữ số liên lạc: Có thể giữ liên lạc với số điện thoại Việt Nam trong thời gian lưu trú</li>
                 <li>•	Hỗ trợ 24/7: Đội ngũ hỗ trợ khách hàng chuyên nghiệp sẵn sàng giúp đỡ mọi lúc mọi nơi</li>
               </ul>
-              <!--<p>Đã nạp sẵn gói cước chu kỳ đầu</p>
-              <p>Tặng thêm 1 tháng khi mua gói 6 tháng</p>
-              <p>Tặng thêm 2 tháng khi mua gói 12 tháng</p>-->
+              <!--<p style="font-family: 'Be Vietnam Pro', sans-serif">Đã nạp sẵn gói cước chu kỳ đầu</p>
+              <p><strong style="color: yellow;font-family: 'Be Vietnam Pro', sans-serif">Giảm 10K cho chu kỳ đầu tiên</strong></p>-->
               <hr>
-              <div class="price">Thanh toán: 80.000đ/16 ngày</div>
-              <button class="btn-buy" onclick="addToCart('Gói A69S', 69000)" style="border-radius: 24px; border: 1px solid rgb(255, 162, 162);">🛒 MUA NGAY</button>
+              <div class="package-item-bottom" style="font-family: 'Be Vietnam Pro', sans-serif">
+                <div class="Thanh-Toan">
+                  <span class="Text-ThanhToan" style="color: black;">Thanh toán</span>
+                  <div class="Gia">
+                    <span class="Text-Gia" style="color: black;">80.000đ</span>
+                    <span class="Text-Cheo" style="color: black;">/
+                      <sapn>16 ngày</sapn>
+                    </span>
+                  </div>
+                </div>
+                <div class="Cart-MuaNgay">
+                  <button class="Shopping-cart" onclick="toggleModal2()" style="background-color: rgb(253 235 237);">
+                    <img src="src/assets/minimal-49-512.webp" alt="Giỏ hàng" id="shopping-cart">
+                  </button>
+                  <button type="button" class="Mua-Ngay" onclick="toggleModal()" style="border: 1px solid rgb(255, 62, 62);">
+                    <span class="Text-MuaNgay" style="color: rgb(255, 62, 62);">Mua ngay</span>
+                  </button>
+                </div>
+              </div>
             </div>
 
             <div class="plan red">
               <div class="styles_packageItemTop__CcsJl">
                 <div class="flex flex-col w-fit styles_packageItemNameContent__LVo5U">
                   <div>
-                    <span class="font-bold-white" style="color: #fff;">Gói ADVENTURER (HITC3)</span>
+                    <span class="font-bold-white" style="font-family: 'Be Vietnam Pro', sans-serif">Gói ADVENTURER (HITC3)</span>
                   </div>
                   <div class="Text-4GB">
-                    <span class="font-bold-4GB" style="color: #fff;">15GB</span>
+                    <span class="font-bold-4GB" style="font-family: 'Be Vietnam Pro', sans-serif">15GB</span>
                   </div>
                 </div>
                 <div class="flex-col">
@@ -342,11 +358,492 @@
                 <li>•	Nhận tin nhắn SMS gợi ý điểm đến, món ăn, sự kiện nổi bật</li>
                 <li>•	Miễn phí truy cập Google Maps và Google Translate</li>
               </ul>
+              <!--<p style="font-family: 'Be Vietnam Pro', sans-serif">Đã nạp sẵn gói cước chu kỳ đầu</p>
+              <p><strong style="color: yellow;font-family: 'Be Vietnam Pro', sans-serif">Giảm 10K cho chu kỳ đầu tiên</strong></p>-->
               <hr>
-              <div class="price">Thanh toán: 120.000đ/30 ngày</div>
-              <button class="btn-buy" onclick="addToCart('Gói A79S', 79000)">🛒 MUA NGAY</button>
+              <div class="package-item-bottom" style="font-family: 'Be Vietnam Pro', sans-serif">
+                <div class="Thanh-Toan">
+                  <span class="Text-ThanhToan">Thanh toán</span>
+                  <div class="Gia">
+                    <span class="Text-Gia">120.000đ</span>
+                    <span class="Text-Cheo">/
+                      <sapn>30 ngày</sapn>
+                    </span>
+                  </div>
+                </div>
+                <div class="Cart-MuaNgay">
+                  <button class="Shopping-cart" onclick="toggleModal2()">
+                    <img src="src/assets/minimal-49-512.webp" alt="Giỏ hàng" id="shopping-cart">
+                  </button>
+                  <button type="button" class="Mua-Ngay" onclick="toggleModal()">
+                    <span class="Text-MuaNgay">Mua ngay</span>
+                  </button>
+                </div>
+              </div>
             </div>
 
+            <div class="plan red">
+              <div class="styles_packageItemTop__CcsJl">
+                <div class="flex flex-col w-fit styles_packageItemNameContent__LVo5U">
+                  <div>
+                    <span class="font-bold-white" style="font-family: 'Be Vietnam Pro', sans-serif">GÓI TOUCHDOWN (HITC4)</span>
+                  </div>
+                  <div class="Text-4GB">
+                    <span class="font-bold-4GB" style="font-family: 'Be Vietnam Pro', sans-serif">3GB</span>
+                  </div>
+                </div>
+                <div class="flex-col">
+                  <div class="flex-gap">
+                    <span class="data-tocdocao">
+                      <span>
+                        <p style="margin: 0;font-weight: 700;font-family: 'Be Vietnam Pro', sans-serif;font-size: 15px;">Data tốc độ cao - chu kỳ 3 ngày</p>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <ul style="font-family: 'Be Vietnam Pro', sans-serif">
+                <li>Miễn phí data tốc độ cao (3GB/3 ngày)</li>
+                <li>•	Phù hợp cho quá cảnh, hội nghị ngắn hoặc du khách chỉ ở lại trong vài ngày</li>
+                <li>•	Kết nối tức thì để đặt xe, tìm đường và gọi điện</li>
+                <li>•	Lý tưởng cho khách công vụ cần liên lạc nhanh và ổn định</li>
+                <li>•	Miễn phí truy cập ứng dụng gọi xe phổ biến như Grab trong thời gian dùng gói</li>
+              </ul>
+              <!--<p style="font-family: 'Be Vietnam Pro', sans-serif">Đã nạp sẵn gói cước chu kỳ đầu</p>
+              <p><strong style="color: yellow;font-family: 'Be Vietnam Pro', sans-serif">Giảm 10K cho chu kỳ đầu tiên</strong></p>-->
+              <hr>
+              <div class="package-item-bottom" style="font-family: 'Be Vietnam Pro', sans-serif">
+                <div class="Thanh-Toan">
+                  <span class="Text-ThanhToan">Thanh toán</span>
+                  <div class="Gia">
+                    <span class="Text-Gia">30.000đ</span>
+                    <span class="Text-Cheo">/
+                      <sapn>3 ngày</sapn>
+                    </span>
+                  </div>
+                </div>
+                <div class="Cart-MuaNgay">
+                  <button class="Shopping-cart" onclick="toggleModal2()">
+                    <img src="src/assets/minimal-49-512.webp" alt="Giỏ hàng" id="shopping-cart">
+                  </button>
+                  <button type="button" class="Mua-Ngay" onclick="toggleModal()">
+                    <span class="Text-MuaNgay">Mua ngay</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="plan">
+              <div class="styles_packageItemTop__CcsJl">
+                <div class="flex flex-col w-fit styles_packageItemNameContent__LVo5U">
+                  <div>
+                    <span class="font-bold-white" style="font-family: 'Be Vietnam Pro', sans-serif;color: red;">GÓI DIGITAL NOMAD (HITC5)</span>
+                  </div>
+                  <div class="Text-4GB">
+                    <span class="font-bold-4GB" style="font-family: 'Be Vietnam Pro', sans-serif;color: black;">30GB</span>
+                  </div>
+                </div>
+                <div class="flex-col">
+                  <div class="flex-gap">
+                    <span class="data-tocdocao">
+                      <span>
+                        <p style="margin: 0;font-weight: 700;font-family: 'Be Vietnam Pro', sans-serif;font-size: 15px;">Data tốc độ cao - chu kỳ 30 ngày</p>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <ul style="font-family: 'Be Vietnam Pro', sans-serif">
+                <li>Miễn phí data tốc độ cao (30GB/30 ngày)</li>
+                <li>•	Dành cho người làm việc từ xa, freelancer hoặc người sống ngắn hạn tại Việt Nam</li>
+                <li>• Data lớn đủ để gọi video, làm việc online, họp Zoom mỗi ngày</li>
+                <li>•	Tặng thêm 1GB mỗi ngày truy cập miễn phí cho ứng dụng lưu trữ đám mây (Google Drive, Dropbox)</li>
+                <li>•	Ưu đãi khi đăng ký gói tháng tiếp theo</li>
+              </ul>
+              <!--<p style="font-family: 'Be Vietnam Pro', sans-serif">Đã nạp sẵn gói cước chu kỳ đầu</p>
+              <p><strong style="color: yellow;font-family: 'Be Vietnam Pro', sans-serif">Giảm 10K cho chu kỳ đầu tiên</strong></p>-->
+              <hr>
+              <div class="package-item-bottom" style="font-family: 'Be Vietnam Pro', sans-serif">
+                <div class="Thanh-Toan">
+                  <span class="Text-ThanhToan" style="color: black;">Thanh toán</span>
+                  <div class="Gia">
+                    <span class="Text-Gia" style="color: black;">200.000đ</span>
+                    <span class="Text-Cheo" style="color: black;">/
+                      <sapn>30 ngày</sapn>
+                    </span>
+                  </div>
+                </div>
+                <div class="Cart-MuaNgay">
+                  <button class="Shopping-cart" onclick="toggleModal2()" style="background-color: rgb(253 235 237);">
+                    <img src="src/assets/minimal-49-512.webp" alt="Giỏ hàng" id="shopping-cart">
+                  </button>
+                  <button type="button" class="Mua-Ngay" onclick="toggleModal()" style="border: 1px solid rgb(255, 62, 62);">
+                    <span class="Text-MuaNgay" style="color: rgb(255, 62, 62);">Mua ngay</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="plan red">
+              <div class="styles_packageItemTop__CcsJl">
+                <div class="flex flex-col w-fit styles_packageItemNameContent__LVo5U">
+                  <div>
+                    <span class="font-bold-white" style="font-family: 'Be Vietnam Pro', sans-serif">GÓI FAMILY PACK (HITC6)</span>
+                  </div>
+                  <div class="Text-4GB">
+                    <span class="font-bold-4GB" style="font-family: 'Be Vietnam Pro', sans-serif">50GB</span>
+                  </div>
+                </div>
+                <div class="flex-col">
+                  <div class="flex-gap">
+                    <span class="data-tocdocao">
+                      <span>
+                        <p style="margin: 0;font-weight: 700;font-family: 'Be Vietnam Pro', sans-serif;font-size: 15px;">Data tốc độ cao - chu kỳ 30 ngày</p>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <ul style="font-family: 'Be Vietnam Pro', sans-serif">
+                <li>Miễn phí data tốc độ cao (50GB/30 ngày)</li>
+                <li>•	Lý tưởng cho nhóm du lịch hoặc gia đình</li>
+                <li>•	Có thể phát wifi từ một thiết bị cho các thành viên còn lại</li>
+                <li>•	Tặng kèm 1 thẻ SIM phụ miễn phí (chia sẻ cùng gói)</li>
+                <li>•	Miễn phí data cho các ứng dụng giải trí trẻ em (YouTube Kids, Wikipedia...)</li>
+              </ul>
+              <!--<p style="font-family: 'Be Vietnam Pro', sans-serif">Đã nạp sẵn gói cước chu kỳ đầu</p>
+              <p><strong style="color: yellow;font-family: 'Be Vietnam Pro', sans-serif">Giảm 10K cho chu kỳ đầu tiên</strong></p>-->
+              <hr>
+              <div class="package-item-bottom" style="font-family: 'Be Vietnam Pro', sans-serif">
+                <div class="Thanh-Toan">
+                  <span class="Text-ThanhToan">Thanh toán</span>
+                  <div class="Gia">
+                    <span class="Text-Gia">250.000đ</span>
+                    <span class="Text-Cheo">/
+                      <sapn>30 ngày</sapn>
+                    </span>
+                  </div>
+                </div>
+                <div class="Cart-MuaNgay">
+                  <button class="Shopping-cart" onclick="toggleModal2()">
+                    <img src="src/assets/minimal-49-512.webp" alt="Giỏ hàng" id="shopping-cart">
+                  </button>
+                  <button type="button" class="Mua-Ngay" onclick="toggleModal()">
+                    <span class="Text-MuaNgay">Mua ngay</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+
+          <div id="combo" class="plans-container">
+            <div class="plan">
+              <div class="styles_packageItemTop__CcsJl">
+                <div class="flex flex-col w-fit styles_packageItemNameContent__LVo5U">
+                  <div>
+                    <span class="font-bold-white" style="font-family: 'Be Vietnam Pro', sans-serif;color: red;">Combo START & GO</span>
+                  </div>
+                  <div class="Text-4GB">
+                    <span class="font-bold-4GB" style="font-family: 'Be Vietnam Pro', sans-serif;color: black;">10GB</span>
+                  </div>
+                </div>
+                <div class="flex-col">
+                  <div class="flex-gap">
+                    <span class="data-tocdocao">
+                      <span>
+                        <p style="margin: 0;font-weight: 700;font-family: 'Be Vietnam Pro', sans-serif;font-size: 15px;">Data tốc độ cao - chu kỳ 16 ngày</p>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <ul style="font-family: 'Be Vietnam Pro', sans-serif">
+                <li>Miễn phí data tốc độ cao (10GB/16 ngày)</li>
+                <li>•	Đủ cho chuyến đi trung bình: Phù hợp cho những ai muốn khám phá nhiều hơn một thành phố hoặc dành thời gian thư giãn tại Việt Nam</li>
+                <li>• Thỏa sức truy cập: Thoải mái lướt web, sử dụng mạng xã hội, xem video và gọi video call</li>
+                <li>•	Giữ số liên lạc: Có thể giữ liên lạc với số điện thoại Việt Nam trong thời gian lưu trú</li>
+                <li>•	Hỗ trợ 24/7: Đội ngũ hỗ trợ khách hàng chuyên nghiệp sẵn sàng giúp đỡ mọi lúc mọi nơi</li>
+              </ul>
+              <!--<p style="font-family: 'Be Vietnam Pro', sans-serif">Đã nạp sẵn gói cước chu kỳ đầu</p>
+              <p><strong style="color: yellow;font-family: 'Be Vietnam Pro', sans-serif">Giảm 10K cho chu kỳ đầu tiên</strong></p>-->
+              <hr>
+              <div class="package-item-bottom" style="font-family: 'Be Vietnam Pro', sans-serif">
+                <div class="Thanh-Toan">
+                  <span class="Text-ThanhToan" style="color: black;">Thanh toán</span>
+                  <div class="Gia">
+                    <span class="Text-Gia" style="color: black;">80.000đ</span>
+                    <span class="Text-Cheo" style="color: black;">/
+                      <sapn>16 ngày</sapn>
+                    </span>
+                  </div>
+                </div>
+                <div class="Cart-MuaNgay">
+                  <button class="Shopping-cart" onclick="toggleModal2()" style="background-color: rgb(253 235 237);">
+                    <img src="src/assets/minimal-49-512.webp" alt="Giỏ hàng" id="shopping-cart">
+                  </button>
+                  <button type="button" class="Mua-Ngay" onclick="toggleModal()" style="border: 1px solid rgb(255, 62, 62);">
+                    <span class="Text-MuaNgay" style="color: rgb(255, 62, 62);">Mua ngay</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="plan red">
+              <div class="styles_packageItemTop__CcsJl">
+                <div class="flex flex-col w-fit styles_packageItemNameContent__LVo5U">
+                  <div>
+                    <span class="font-bold-white" style="font-family: 'Be Vietnam Pro', sans-serif">Gói DISCOVER (HITC1)</span>
+                  </div>
+                  <div class="Text-4GB">
+                    <span class="font-bold-4GB" style="font-family: 'Be Vietnam Pro', sans-serif">7GB</span>
+                  </div>
+                </div>
+                <div class="flex-col">
+                  <div class="flex-gap">
+                    <span class="data-tocdocao">
+                      <span>
+                        <p style="margin: 0;font-weight: 700;font-family: 'Be Vietnam Pro', sans-serif;font-size: 15px;">Data tốc độ cao - chu kỳ 8 ngày</p>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <ul style="font-family: 'Be Vietnam Pro', sans-serif">
+                <li>Miễn phí data tốc độ cao (7GB/8 ngày)</li>
+                <li>•	Lý tưởng cho chuyến đi ngắn: Hoàn hảo cho các chuyến công tác, quá cảnh hoặc du lịch ngắn ngày</li>
+                <li>•	Kết nối tức thì: Truy cập Internet ngay lập tức để tìm đường, tra cứu thông tin địa điểm và liên lạc</li>
+                <li>•	Dễ dàng kích hoạt: Lắp SIM vào là dùng ngay, không cần đăng ký phức tạp</li>
+                <li>•	Hỗ trợ đa ngôn ngữ: Tổng đài hỗ trợ 24/7 bằng tiếng Anh và tiếng Việt</li>
+              </ul>
+              <!--<p style="font-family: 'Be Vietnam Pro', sans-serif">Đã nạp sẵn gói cước chu kỳ đầu</p>
+              <p><strong style="color: yellow;font-family: 'Be Vietnam Pro', sans-serif">Giảm 10K cho chu kỳ đầu tiên</strong></p>-->
+              <hr>
+              <div class="package-item-bottom" style="font-family: 'Be Vietnam Pro', sans-serif">
+                <div class="Thanh-Toan">
+                  <span class="Text-ThanhToan">Thanh toán</span>
+                  <div class="Gia">
+                    <span class="Text-Gia">68.000đ</span>
+                    <span class="Text-Cheo">/
+                      <sapn>20 ngày</sapn>
+                    </span>
+                  </div>
+                </div>
+                <div class="Cart-MuaNgay">
+                  <button class="Shopping-cart" onclick="toggleModal2()">
+                    <img src="src/assets/minimal-49-512.webp" alt="Giỏ hàng" id="shopping-cart">
+                  </button>
+                  <button type="button" class="Mua-Ngay" onclick="toggleModal()">
+                    <span class="Text-MuaNgay">Mua ngay</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="plan">
+              <div class="styles_packageItemTop__CcsJl">
+                <div class="flex flex-col w-fit styles_packageItemNameContent__LVo5U">
+                  <div>
+                    <span class="font-bold-white" style="font-family: 'Be Vietnam Pro', sans-serif;color: red;">Gói EXPLORER (HITC2)</span>
+                  </div>
+                  <div class="Text-4GB">
+                    <span class="font-bold-4GB" style="font-family: 'Be Vietnam Pro', sans-serif;color: black;">10GB</span>
+                  </div>
+                </div>
+                <div class="flex-col">
+                  <div class="flex-gap">
+                    <span class="data-tocdocao">
+                      <span>
+                        <p style="margin: 0;font-weight: 700;font-family: 'Be Vietnam Pro', sans-serif;font-size: 15px;">Data tốc độ cao - chu kỳ 16 ngày</p>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <ul style="font-family: 'Be Vietnam Pro', sans-serif">
+                <li>Miễn phí data tốc độ cao (10GB/16 ngày)</li>
+                <li>•	Đủ cho chuyến đi trung bình: Phù hợp cho những ai muốn khám phá nhiều hơn một thành phố hoặc dành thời gian thư giãn tại Việt Nam</li>
+                <li>• Thỏa sức truy cập: Thoải mái lướt web, sử dụng mạng xã hội, xem video và gọi video call</li>
+                <li>•	Giữ số liên lạc: Có thể giữ liên lạc với số điện thoại Việt Nam trong thời gian lưu trú</li>
+                <li>•	Hỗ trợ 24/7: Đội ngũ hỗ trợ khách hàng chuyên nghiệp sẵn sàng giúp đỡ mọi lúc mọi nơi</li>
+              </ul>
+              <!--<p style="font-family: 'Be Vietnam Pro', sans-serif">Đã nạp sẵn gói cước chu kỳ đầu</p>
+              <p><strong style="color: yellow;font-family: 'Be Vietnam Pro', sans-serif">Giảm 10K cho chu kỳ đầu tiên</strong></p>-->
+              <hr>
+              <div class="package-item-bottom" style="font-family: 'Be Vietnam Pro', sans-serif">
+                <div class="Thanh-Toan">
+                  <span class="Text-ThanhToan" style="color: black;">Thanh toán</span>
+                  <div class="Gia">
+                    <span class="Text-Gia" style="color: black;">80.000đ</span>
+                    <span class="Text-Cheo" style="color: black;">/
+                      <sapn>16 ngày</sapn>
+                    </span>
+                  </div>
+                </div>
+                <div class="Cart-MuaNgay">
+                  <button class="Shopping-cart" onclick="toggleModal2()" style="background-color: rgb(253 235 237);">
+                    <img src="src/assets/minimal-49-512.webp" alt="Giỏ hàng" id="shopping-cart">
+                  </button>
+                  <button type="button" class="Mua-Ngay" onclick="toggleModal()" style="border: 1px solid rgb(255, 62, 62);">
+                    <span class="Text-MuaNgay" style="color: rgb(255, 62, 62);">Mua ngay</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="plan">
+              <div class="styles_packageItemTop__CcsJl">
+                <div class="flex flex-col w-fit styles_packageItemNameContent__LVo5U">
+                  <div>
+                    <span class="font-bold-white" style="font-family: 'Be Vietnam Pro', sans-serif;color: red;">Gói EXPLORER (HITC2)</span>
+                  </div>
+                  <div class="Text-4GB">
+                    <span class="font-bold-4GB" style="font-family: 'Be Vietnam Pro', sans-serif;color: black;">10GB</span>
+                  </div>
+                </div>
+                <div class="flex-col">
+                  <div class="flex-gap">
+                    <span class="data-tocdocao">
+                      <span>
+                        <p style="margin: 0;font-weight: 700;font-family: 'Be Vietnam Pro', sans-serif;font-size: 15px;">Data tốc độ cao - chu kỳ 16 ngày</p>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <ul style="font-family: 'Be Vietnam Pro', sans-serif">
+                <li>Miễn phí data tốc độ cao (10GB/16 ngày)</li>
+                <li>•	Đủ cho chuyến đi trung bình: Phù hợp cho những ai muốn khám phá nhiều hơn một thành phố hoặc dành thời gian thư giãn tại Việt Nam</li>
+                <li>• Thỏa sức truy cập: Thoải mái lướt web, sử dụng mạng xã hội, xem video và gọi video call</li>
+                <li>•	Giữ số liên lạc: Có thể giữ liên lạc với số điện thoại Việt Nam trong thời gian lưu trú</li>
+                <li>•	Hỗ trợ 24/7: Đội ngũ hỗ trợ khách hàng chuyên nghiệp sẵn sàng giúp đỡ mọi lúc mọi nơi</li>
+              </ul>
+              <!--<p style="font-family: 'Be Vietnam Pro', sans-serif">Đã nạp sẵn gói cước chu kỳ đầu</p>
+              <p><strong style="color: yellow;font-family: 'Be Vietnam Pro', sans-serif">Giảm 10K cho chu kỳ đầu tiên</strong></p>-->
+              <hr>
+              <div class="package-item-bottom" style="font-family: 'Be Vietnam Pro', sans-serif">
+                <div class="Thanh-Toan">
+                  <span class="Text-ThanhToan" style="color: black;">Thanh toán</span>
+                  <div class="Gia">
+                    <span class="Text-Gia" style="color: black;">80.000đ</span>
+                    <span class="Text-Cheo" style="color: black;">/
+                      <sapn>16 ngày</sapn>
+                    </span>
+                  </div>
+                </div>
+                <div class="Cart-MuaNgay">
+                  <button class="Shopping-cart" onclick="toggleModal2()" style="background-color: rgb(253 235 237);">
+                    <img src="src/assets/minimal-49-512.webp" alt="Giỏ hàng" id="shopping-cart">
+                  </button>
+                  <button type="button" class="Mua-Ngay" onclick="toggleModal()" style="border: 1px solid rgb(255, 62, 62);">
+                    <span class="Text-MuaNgay" style="color: rgb(255, 62, 62);">Mua ngay</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="plan">
+              <div class="styles_packageItemTop__CcsJl">
+                <div class="flex flex-col w-fit styles_packageItemNameContent__LVo5U">
+                  <div>
+                    <span class="font-bold-white" style="font-family: 'Be Vietnam Pro', sans-serif;color: red;">Gói EXPLORER (HITC2)</span>
+                  </div>
+                  <div class="Text-4GB">
+                    <span class="font-bold-4GB" style="font-family: 'Be Vietnam Pro', sans-serif;color: black;">10GB</span>
+                  </div>
+                </div>
+                <div class="flex-col">
+                  <div class="flex-gap">
+                    <span class="data-tocdocao">
+                      <span>
+                        <p style="margin: 0;font-weight: 700;font-family: 'Be Vietnam Pro', sans-serif;font-size: 15px;">Data tốc độ cao - chu kỳ 16 ngày</p>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <ul style="font-family: 'Be Vietnam Pro', sans-serif">
+                <li>Miễn phí data tốc độ cao (10GB/16 ngày)</li>
+                <li>•	Đủ cho chuyến đi trung bình: Phù hợp cho những ai muốn khám phá nhiều hơn một thành phố hoặc dành thời gian thư giãn tại Việt Nam</li>
+                <li>• Thỏa sức truy cập: Thoải mái lướt web, sử dụng mạng xã hội, xem video và gọi video call</li>
+                <li>•	Giữ số liên lạc: Có thể giữ liên lạc với số điện thoại Việt Nam trong thời gian lưu trú</li>
+                <li>•	Hỗ trợ 24/7: Đội ngũ hỗ trợ khách hàng chuyên nghiệp sẵn sàng giúp đỡ mọi lúc mọi nơi</li>
+              </ul>
+              <!--<p style="font-family: 'Be Vietnam Pro', sans-serif">Đã nạp sẵn gói cước chu kỳ đầu</p>
+              <p><strong style="color: yellow;font-family: 'Be Vietnam Pro', sans-serif">Giảm 10K cho chu kỳ đầu tiên</strong></p>-->
+              <hr>
+              <div class="package-item-bottom" style="font-family: 'Be Vietnam Pro', sans-serif">
+                <div class="Thanh-Toan">
+                  <span class="Text-ThanhToan" style="color: black;">Thanh toán</span>
+                  <div class="Gia">
+                    <span class="Text-Gia" style="color: black;">80.000đ</span>
+                    <span class="Text-Cheo" style="color: black;">/
+                      <sapn>16 ngày</sapn>
+                    </span>
+                  </div>
+                </div>
+                <div class="Cart-MuaNgay">
+                  <button class="Shopping-cart" onclick="toggleModal2()" style="background-color: rgb(253 235 237);">
+                    <img src="src/assets/minimal-49-512.webp" alt="Giỏ hàng" id="shopping-cart">
+                  </button>
+                  <button type="button" class="Mua-Ngay" onclick="toggleModal()" style="border: 1px solid rgb(255, 62, 62);">
+                    <span class="Text-MuaNgay" style="color: rgb(255, 62, 62);">Mua ngay</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="plan">
+              <div class="styles_packageItemTop__CcsJl">
+                <div class="flex flex-col w-fit styles_packageItemNameContent__LVo5U">
+                  <div>
+                    <span class="font-bold-white" style="font-family: 'Be Vietnam Pro', sans-serif;color: red;">Gói EXPLORER (HITC2)</span>
+                  </div>
+                  <div class="Text-4GB">
+                    <span class="font-bold-4GB" style="font-family: 'Be Vietnam Pro', sans-serif;color: black;">10GB</span>
+                  </div>
+                </div>
+                <div class="flex-col">
+                  <div class="flex-gap">
+                    <span class="data-tocdocao">
+                      <span>
+                        <p style="margin: 0;font-weight: 700;font-family: 'Be Vietnam Pro', sans-serif;font-size: 15px;">Data tốc độ cao - chu kỳ 16 ngày</p>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <ul style="font-family: 'Be Vietnam Pro', sans-serif">
+                <li>Miễn phí data tốc độ cao (10GB/16 ngày)</li>
+                <li>•	Đủ cho chuyến đi trung bình: Phù hợp cho những ai muốn khám phá nhiều hơn một thành phố hoặc dành thời gian thư giãn tại Việt Nam</li>
+                <li>• Thỏa sức truy cập: Thoải mái lướt web, sử dụng mạng xã hội, xem video và gọi video call</li>
+                <li>•	Giữ số liên lạc: Có thể giữ liên lạc với số điện thoại Việt Nam trong thời gian lưu trú</li>
+                <li>•	Hỗ trợ 24/7: Đội ngũ hỗ trợ khách hàng chuyên nghiệp sẵn sàng giúp đỡ mọi lúc mọi nơi</li>
+              </ul>
+              <!--<p style="font-family: 'Be Vietnam Pro', sans-serif">Đã nạp sẵn gói cước chu kỳ đầu</p>
+              <p><strong style="color: yellow;font-family: 'Be Vietnam Pro', sans-serif">Giảm 10K cho chu kỳ đầu tiên</strong></p>-->
+              <hr>
+              <div class="package-item-bottom" style="font-family: 'Be Vietnam Pro', sans-serif">
+                <div class="Thanh-Toan">
+                  <span class="Text-ThanhToan" style="color: black;">Thanh toán</span>
+                  <div class="Gia">
+                    <span class="Text-Gia" style="color: black;">80.000đ</span>
+                    <span class="Text-Cheo" style="color: black;">/
+                      <sapn>16 ngày</sapn>
+                    </span>
+                  </div>
+                </div>
+                <div class="Cart-MuaNgay">
+                  <button class="Shopping-cart" onclick="toggleModal2()" style="background-color: rgb(253 235 237);">
+                    <img src="src/assets/minimal-49-512.webp" alt="Giỏ hàng" id="shopping-cart">
+                  </button>
+                  <button type="button" class="Mua-Ngay" onclick="toggleModal()" style="border: 1px solid rgb(255, 62, 62);">
+                    <span class="Text-MuaNgay" style="color: rgb(255, 62, 62);">Mua ngay</span>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
             
