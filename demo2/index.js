@@ -43,3 +43,8 @@ function closeModal() {
 function confirmExit() {
   history.back();
 }
+
+
+
+
+

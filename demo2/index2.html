@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bán Đồ Chơi Trẻ Em</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: #3498db;
+      color: white;
+    }
+    .cart-icon {
+      position: relative;
+      cursor: pointer;
+    }
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 12px;
+    }
+    .product {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 20px;
+      width: 300px;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: inline-block;
+      vertical-align: top;
+      transition: transform 0.2s;
+    }
+    .product:hover {
+      transform: scale(1.03);
+    }
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    #popupForm {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      width: 300px;
+    }
+    #popupOverlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 999;
+    }
+    input[type="number"] {
+      width: 60px;
+      padding: 6px;
+      font-size: 14px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Đồ Chơi Trẻ Em</h2>
+    <div class="cart-icon" onclick="window.location.href='./giohang.html'">
+      🛒 Giỏ hàng <span class="cart-count" id="cartCount">0</span>
+    </div>
+  </header>
+
+  <div class="product" data-name="Xe Đồ Chơi" data-price="150000">
+    <h3>Xe Đồ Chơi</h3>
+    <p>Giá: 150,000 VND</p>
+    <button onclick="openForm(this)">🛒 Thêm vào giỏ</button>
+  </div>
+
+  <div class="product" data-name="Búp Bê Barbie" data-price="200000">
+    <h3>Búp Bê Barbie</h3>
+    <p>Giá: 200,000 VND</p>
+    <button onclick="openForm(this)">🛒 Thêm vào giỏ</button>
+  </div>
+
+  <div class="product" data-name="Bộ Xếp Hình" data-price="180000">
+    <h3>Bộ Xếp Hình</h3>
+    <p>Giá: 180,000 VND</p>
+    <button onclick="openForm(this)">🛒 Thêm vào giỏ</button>
+  </div>
+
+  <div id="popupOverlay"></div>
+  <div id="popupForm">
+    <h3 id="formProductName"></h3>
+    <p id="formProductPrice"></p>
+    <label>Số lượng:<br>
+      <input type="number" id="productQuantity" min="1" value="1">
+    </label><br><br>
+    <button onclick="addToCart()">✅ Đồng ý</button>
+    <button onclick="closeForm()" style="background-color:#e74c3c; margin-left:10px">❌ Hủy</button>
+  </div>
+
+  <script>
+    let selectedProduct = {};
+
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const count = cart.reduce((total, item) => total + item.quantity, 0);
+      document.getElementById('cartCount').textContent = count;
+    }
+
+    function openForm(button) {
+      const product = button.parentElement;
+      selectedProduct = {
+        name: product.getAttribute('data-name'),
+        price: parseInt(product.getAttribute('data-price'))
+      };
+      document.getElementById('formProductName').textContent = selectedProduct.name;
+      document.getElementById('formProductPrice').textContent = `Giá: ${selectedProduct.price.toLocaleString()} VND`;
+      document.getElementById('productQuantity').value = 1;
+      document.getElementById('popupForm').style.display = 'block';
+      document.getElementById('popupOverlay').style.display = 'block';
+    }
+
+    function closeForm() {
+      document.getElementById('popupForm').style.display = 'none';
+      document.getElementById('popupOverlay').style.display = 'none';
+    }
+
+    function addToCart() {
+      const quantity = parseInt(document.getElementById('productQuantity').value);
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      const existing = cart.find(item => item.name === selectedProduct.name);
+      if (existing) {
+        existing.quantity += quantity;
+      } else {
+        cart.push({
+          name: selectedProduct.name,
+          price: selectedProduct.price,
+          quantity: quantity
+        });
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      closeForm();
+      updateCartCount();
+    }
+
+    updateCartCount();
+  </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ Hàng</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .cart-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      padding: 12px;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .remove-btn {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .remove-btn:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <h1>🛒 Chi Tiết Giỏ Hàng</h1>
+  <div class="cart-container">
+    <ul id="cartList"></ul>
+  </div>
+
+  <script>
+    const cartList = document.getElementById('cartList');
+    let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function renderCart() {
+      cartList.innerHTML = '';
+      cartData.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `${item.name} - Số lượng: ${item.quantity} - Tổng: ${(item.price * item.quantity).toLocaleString()} VND 
+          <button class="remove-btn" onclick="removeItem(${index})">Hủy</button>`;
+        cartList.appendChild(li);
+      });
+    }
+
+    function removeItem(index) {
+      cartData.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cartData));
+      renderCart();
+    }
+
+    renderCart();
+  </script>
+</body>
+</html>

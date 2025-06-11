@@ -3,293 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gói Cước</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f8f8f8;
-      margin: 0;
-      padding: 20px;
-    }
-
-    .tabs {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .tab {
-      padding: 10px 20px;
-      background: #ffd7dc;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-    }
-
-    .tab.active {
-      background: #f33;
-      color: white;
-      font-weight: bold;
-    }
-
-    .plans-container {
-      display: none;
-    }
-
-    .plans-container.active {
-      display: block;
-    }
-
-    .slider-wrapper {
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      display: flex;
-      scroll-behavior: smooth;
-      padding-bottom: 10px;
-    }
-
-    .slider-track {
-      display: flex;
-      gap: 16px;
-      padding-bottom: 10px;
-    }
-
-    .slider-wrapper::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    .slider-wrapper::-webkit-scrollbar-thumb {
-      background: #ccc;
-      border-radius: 10px;
-    }
-
-    .slider-wrapper:hover::-webkit-scrollbar-thumb {
-      background: #999;
-    }
-
-    .plan {
-      flex: 0 0 280px;
-      scroll-snap-align: start;
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      position: relative;
-    }
-
-    .plan.highlight {
-      border: 2px solid #f33;
-      background-color: #fceaea;
-    }
-
-    .badge {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      background: yellow;
-      color: red;
-      font-weight: bold;
-      padding: 5px 10px;
-      border-radius: 50%;
-    }
-
-    .plan h3 {
-      color: #c00;
-    }
-
-    .plan .sub {
-      font-style: italic;
-      margin: 5px 0 10px;
-    }
-
-    .plan h2 {
-      color: #c00;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .price {
-      font-size: 20px;
-      font-weight: bold;
-      margin: 15px 0;
-      color: #333;
-    }
-
-    .buy-btn {
-      background: #f33;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      padding: 10px 25px;
-      font-size: 16px;
-      cursor: pointer;
-      width: 100%;
-    }
-  </style>
+  <title>Gói A89D</title>
+  <link rel="stylesheet" href="./index.css" />
 </head>
 <body>
-  <div class="tabs">
-    <button class="tab active" data-tab="data">DATA</button>
-    <button class="tab" data-tab="combo">COMBO</button>
-  </div>
+  <div class="steps">
+    <div class="step active">1 Chọn SIM/Số/Gói</div>
+    <div class="step">2 Nhập thông tin</div>
+    <div class="step">3 Thanh toán</div>
+    <!-- Nút quay lại -->
+    <a href="#" id="btnBack" class="nut-quay-lai">
+      <img src="/src/assets/IconBack.png" alt="Quay lại">
+    </a>
 
-  <!-- DATA Carousel -->
-  <div class="plans-container active" id="data">
-    <div class="slider-wrapper">
-      <div class="slider-track">
-        <div class="plan highlight">
-          <div class="badge">GIẢM 10K</div>
-          <h3>Gói A68D</h3>
-          <p class="sub">Chu kỳ 20 ngày</p>
-          <h2>4GB/ngày</h2>
-          <ul>
-            <li>✔️ 80GB tốc độ cao</li>
-            <li>✔️ Facebook, TikTok, YouTube...</li>
-          </ul>
-          <p><strong>Giảm 10K cho chu kỳ đầu</strong></p>
-          <div class="price">68.000đ</div>
-          <button class="buy-btn">MUA NGAY</button>
-        </div>
-
-        <div class="plan">
-          <h3>Gói A69S</h3>
-          <p class="sub">Chu kỳ 30 ngày</p>
-          <h2>2GB/ngày</h2>
-          <ul>
-            <li>✔️ 60GB tốc độ cao</li>
-            <li>✔️ Facebook, TikTok, YouTube...</li>
-          </ul>
-          <div class="price">69.000đ</div>
-          <button class="buy-btn">MUA NGAY</button>
-        </div>
-
-        <div class="plan">
-          <h3>Gói A79S</h3>
-          <p class="sub">Chu kỳ 30 ngày</p>
-          <h2>3GB/ngày</h2>
-          <ul>
-            <li>✔️ 90GB tốc độ cao</li>
-            <li>✔️ Full truy cập OTT</li>
-          </ul>
-          <div class="price">79.000đ</div>
-          <button class="buy-btn">MUA NGAY</button>
-        </div>
-
-        <div class="plan">
-          <h3>Gói A88D</h3>
-          <p class="sub">Chu kỳ 20 ngày</p>
-          <h2>6GB/ngày</h2>
-          <ul>
-            <li>✔️ 120GB tốc độ cao</li>
-            <li>✔️ Ưu tiên TikTok, YouTube</li>
-          </ul>
-          <div class="price">88.000đ</div>
-          <button class="buy-btn">MUA NGAY</button>
-        </div>
-
-        <div class="plan highlight">
-          <div class="badge">HOT</div>
-          <h3>Gói A119M</h3>
-          <p class="sub">Chu kỳ 30 ngày</p>
-          <h2>10GB/ngày</h2>
-          <ul>
-            <li>✔️ 300GB tốc độ cao</li>
-            <li>✔️ Full gọi + OTT</li>
-          </ul>
-          <div class="price">119.000đ</div>
-          <button class="buy-btn">MUA NGAY</button>
+    <!-- Modal thoát -->
+    <div class="modal" id="modalThoat">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+        <h2>Thoát mua hàng</h2>
+        <p>
+          Bạn có chắc muốn thoát mua hàng?<br/>
+          Khi bạn thoát đồng nghĩa với các sản phẩm trong đơn hàng cũng bị xoá.
+        </p>
+        <div class="actions">
+          <button class="outline" onclick="confirmExit()">XÁC NHẬN THOÁT</button>
+          <button class="solid" onclick="closeModal()">TIẾP TỤC MUA HÀNG</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- COMBO -->
-  <div class="plans-container" id="combo">
-    <div class="slider-track">
-      <div class="plan">
-        <h3>Gói BUNDLE_A69S_YT</h3>
-        <p class="sub">Chu kỳ 30 ngày</p>
-        <h2>2GB/ngày</h2>
-        <ul>
-          <li>✔️ 60GB tốc độ cao</li>
-          <li>✔️ Miễn phí YouTube</li>
-        </ul>
-        <div class="price">79.000đ</div>
-        <button class="buy-btn">MUA NGAY</button>
+  <div class="wrapper">
+    <!-- Left Side -->
+    <div class="left-panel">
+      <div class="plan-title">
+        <span class="plan-name">Gói <strong class="red">A89D</strong></span> • 4GB/ngày
+      </div>
+      <div class="form-group">
+        <label>Chu kỳ</label>
+        <select id="chuKy">
+          <option value="89000">1 chu kỳ ● 89.000đ</option>
+        </select>
       </div>
 
-      <div class="plan highlight">
-        <h3>Gói BUNDLE_A69S_YT_FB</h3>
-        <p class="sub">Chu kỳ 30 ngày</p>
-        <h2>2GB/ngày</h2>
-        <ul>
-          <li>✔️ 60GB tốc độ cao</li>
-          <li>✔️ YouTube + Facebook Free</li>
-        </ul>
-        <div class="price">89.000đ</div>
-        <button class="buy-btn">MUA NGAY</button>
+      <div class="form-group">
+        <label>Số lượng</label>
+        <div class="quantity-control">
+          <button onclick="changeQty(-1)">−</button>
+          <span id="qty">1</span>
+          <button onclick="changeQty(1)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side -->
+    <div class="right-panel">
+      <div class="sim-type">
+        <label>Chọn loại sim</label>
+        <div class="radio-box">
+          <label class="radio">
+            <input type="radio" name="sim" value="esim" checked />
+            eSIM <span class="yellow">GIÁ 10K/SIM</span>
+            <span class="badge red">⚡ RẺ HƠN 25K</span>
+          </label>
+        </div>
+        <div class="radio-box">
+          <label class="radio">
+            <input type="radio" name="sim" value="sim" />
+            SIM vật lý <span class="yellow">GIÁ 10K/SIM</span>
+          </label>
+        </div>
       </div>
 
-      <div class="plan">
-        <h3>Gói BUNDLE_A79S_YT</h3>
-        <p class="sub">Chu kỳ 30 ngày</p>
-        <h2>3GB/ngày</h2>
-        <ul>
-          <li>✔️ 90GB tốc độ cao</li>
-          <li>✔️ YouTube không giới hạn</li>
-        </ul>
-        <div class="price">89.000đ</div>
-        <button class="buy-btn">MUA NGAY</button>
+      <div class="summary">
+        <h4>THÔNG TIN THANH TOÁN</h4>
+        <p>Gói A89D ● 1 chu kỳ x<span id="qtySum">1</span>: <span id="priceGoi">89.000</span>đ</p>
+        <p>Phí eSIM: <span id="simFee">10.000</span>đ</p>
+        <p>Phí hòa mạng: 25.000đ</p>
+        <hr />
+        <h3>TẠM TÍNH: <span id="total">124.000</span>đ</h3>
+        <button class="pay-btn">TIẾN HÀNH THANH TOÁN</button>
+        <button class="add-btn">MUA THÊM GÓI</button>
       </div>
     </div>
   </div>
 
-  <script>
-    const tabs = document.querySelectorAll('.tab');
-    const containers = document.querySelectorAll('.plans-container');
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-
-        containers.forEach(c => c.classList.remove('active'));
-        const id = tab.getAttribute('data-tab');
-        document.getElementById(id).classList.add('active');
-      });
-    });
-
-    // PC: Scroll ngang bằng chuột
-    const slider = document.querySelector('#data .slider-wrapper');
-    slider.addEventListener('wheel', (e) => {
-      if (e.deltaY === 0) return;
-      e.preventDefault();
-      slider.scrollLeft += e.deltaY;
-    }, { passive: false });
-    // === AUTO SCROLL FOR DATA CAROUSEL ===
-let autoScrollInterval;
-let scrollAmount = 300; // pixels per step
-const track = document.querySelector('#data .slider-wrapper');
-
-function startAutoScroll() {
-  autoScrollInterval = setInterval(() => {
-    // If reached end, scroll to start
-    if (track.scrollLeft + track.clientWidth >= track.scrollWidth) {
-      track.scrollTo({ left: 0, behavior: 'smooth' });
-    } else {
-      track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  }, 3000); // every 3s
-}
-
-// Optional: stop auto scroll if user interacts
-track.addEventListener('wheel', () => clearInterval(autoScrollInterval), { once: true });
-track.addEventListener('touchstart', () => clearInterval(autoScrollInterval), { once: true });
-
-startAutoScroll();
-  </script>
+  <script src="./index.js"></script>
 </body>
 </html>

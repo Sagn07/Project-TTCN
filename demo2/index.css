@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.goi-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.goi-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.goi-card.red {
+  background: #e60023;
+  color: white;
+}
+
+.goi-card a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: white;
+  color: #e60023;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.goi-card.red a {
+  background: white;
+  color: #e60023;
+}
+
+.goi-card a:hover {
+  opacity: 0.9;
+}
+
+.checkout-box {
+  max-width: 500px;
+  background: white;
+  padding: 30px;
+  margin: 60px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Nút quay lại */
+.nut-quay-lai {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+}
+
+.nut-quay-lai img {
+  width: 26px;
+  height: 26px;
+}

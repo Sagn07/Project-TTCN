@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thanh toán</title>
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+  <!-- Nút quay lại -->
+  <a href="index.html" class="nut-quay-lai">
+    <img src="/src/assets/IconBack.png" alt="Quay lại" />
+  </a>
+
+  <!-- Nội dung thanh toán -->
+  <!-- Tên gói -->
+<div class="plan-title">
+  <span class="plan-name">
+    Gói <strong class="red" id="ten-goi">Đang tải...</strong>
+  </span> • <span id="data-info">---</span>/ngày
+</div>
+
+<!-- Trong phần tóm tắt thanh toán -->
+<p>
+  Gói <span id="goi-tomtat">---</span> ●
+  <span id="chuKy">1</span> chu kỳ x<span id="qtySum">1</span>: <span id="priceGoi">0</span>đ
+</p>
+  <script src="./index.js">
+    const urlParams = new URLSearchParams(window.location.search);
+    const tenGoi = urlParams.get('goi');
+    const goiTen = document.getElementById("goiTen");
+    goiTen.textContent = tenGoi
+      ? `Bạn đang chọn: Gói ${tenGoi}`
+      : "Không xác định gói nào.";
+  </script>
+</body>
+</html>

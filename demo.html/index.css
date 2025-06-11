@@ -1,95 +1,213 @@
 body {
-  font-family: 'Arial', sans-serif;
-  background: #f5f5f5;
+  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  background: #fafafa;
 }
 
-.tabs {
+.steps {
   display: flex;
-  gap: 10px;
+  padding: 20px;
+  background: #fff;
+  justify-content: center;
+  gap: 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+.step {
+  color: #bbb;
+  font-weight: bold;
+}
+
+.step.active {
+  color: #e60023;
+}
+
+.wrapper {
+  display: flex;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  gap: 30px;
+}
+
+.left-panel {
+  flex: 1;
+}
+
+.right-panel {
+  flex: 1;
+}
+
+.plan-title {
+  font-size: 20px;
   margin-bottom: 20px;
 }
 
-.tab {
-  padding: 10px 20px;
+.red {
+  color: #e60023;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+select {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.quantity-control {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.quantity-control button {
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #eee;
   border: none;
-  background: #ffd7dc;
-  border-radius: 20px;
   cursor: pointer;
 }
 
-.tab.active {
-  background: #f33;
+.sim-type .radio-box {
+  margin-top: 10px;
+}
+
+.radio input {
+  margin-right: 10px;
+}
+
+.yellow {
+  background: yellow;
+  padding: 3px 6px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.badge.red {
+  background: red;
   color: white;
-  font-weight: bold;
+  padding: 3px 6px;
+  font-size: 12px;
+  border-radius: 3px;
+  margin-left: 5px;
 }
 
-.plans {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.plan {
-  background: white;
+.summary {
+  margin-top: 20px;
+  background: #f9f9f9;
   padding: 20px;
-  border-radius: 15px;
-  width: 300px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.summary h3 {
+  color: #e60023;
+}
+
+.pay-btn, .add-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  font-size: 16px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.pay-btn {
+  background-color: #e60023;
+  color: white;
+}
+
+.add-btn {
+  background: transparent;
+  border: 1px solid #e60023;
+  color: #e60023;
+}
+.nut-quay-lai {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.nut-quay-lai img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: opacity 0.2s;
+}
+
+.nut-quay-lai:hover img {
+  opacity: 0.7;
+}
+/* Modal overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Modal content box */
+.modal-content {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 500px;
+  text-align: center;
   position: relative;
 }
 
-.plan.highlight {
-  border: 2px solid #f33;
-  background-color: #fceaea;
-}
-
-.badge {
+/* Close button */
+.modal-content .close {
   position: absolute;
-  top: -10px;
-  right: -10px;
-  background: yellow;
-  color: red;
-  font-weight: bold;
-  padding: 5px 10px;
-  border-radius: 50%;
-}
-
-.plan h3 {
-  color: #c00;
-}
-
-.plan .sub {
-  font-style: italic;
-  margin: 5px 0 10px;
-}
-
-.plan h2 {
-  color: #c00;
-}
-
-ul {
-  padding-left: 20px;
-}
-
-.price {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 15px 0;
-  color: #333;
-}
-
-.buy-btn {
-  background: #f33;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  padding: 10px 25px;
-  font-size: 16px;
+  top: 15px;
+  right: 20px;
+  font-size: 22px;
   cursor: pointer;
-  width: 100%;
 }
-.hidden {
-  display: none;
+
+/* Button styles */
+.actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+button.outline {
+  padding: 10px 20px;
+  border: 2px solid #e60023;
+  color: #e60023;
+  background: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button.solid {
+  padding: 10px 20px;
+  border: none;
+  background: #e60023;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button.outline:hover, button.solid:hover {
+  opacity: 0.9;
 }
